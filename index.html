@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Forge Gym Schedule</title>
+    <title>🏋️ Iron Forge Gym Schedule</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>">
     <style>
         * {
             box-sizing: border-box;
@@ -61,6 +62,22 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .dumbbell-icon {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 0 10px rgba(255, 71, 0, 0.5));
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         
         .subtitle {
@@ -369,7 +386,11 @@
 <body>
     <div class="container">
         <header>
-            <h1 class="gym-title">IRON FORGE</h1>
+            <h1 class="gym-title">
+                <span class="dumbbell-icon">🏋️</span>
+                IRON FORGE
+                <span class="dumbbell-icon">🏋️</span>
+            </h1>
             <p class="subtitle">Professional Training Schedule • Progressive Overload • Maximum Gains</p>
         </header>
         
