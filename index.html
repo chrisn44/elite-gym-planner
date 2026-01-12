@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏋️ Iron Forge Gym Schedule</title>
+    <title>🏋️ ELITE TRAINING SYSTEM Gym Schedule</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>">
     <style>
         * {
@@ -45,7 +45,7 @@
         header {
             text-align: center;
             padding: 25px 0;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             position: relative;
             border-bottom: 3px solid transparent;
             border-image: linear-gradient(to right, transparent, #ff4700, #00b4d8, transparent) 1;
@@ -85,6 +85,67 @@
             font-size: 1.2rem;
             letter-spacing: 1px;
             font-weight: 300;
+        }
+        
+        /* Tab Navigation Styles */
+        .tab-container {
+            margin: 20px 0 30px;
+            position: relative;
+        }
+        
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            background: rgba(30, 30, 30, 0.8);
+            border: 2px solid rgba(255, 71, 0, 0.3);
+            color: #adb5bd;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            min-width: 200px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .tab-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 71, 0, 0.2);
+            border-color: rgba(255, 71, 0, 0.6);
+        }
+        
+        .tab-button.active {
+            background: linear-gradient(45deg, #ff4700, #ff8500);
+            color: #0c0c0c;
+            border-color: #ff4700;
+            box-shadow: 0 5px 15px rgba(255, 71, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .tab-icon {
+            font-size: 1.4rem;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
         }
         
         .schedule-container {
@@ -154,6 +215,26 @@
             font-size: 1.1rem;
             letter-spacing: 1px;
             box-shadow: 0 4px 10px rgba(255, 71, 0, 0.3);
+        }
+        
+        .calorie-burn {
+            background: linear-gradient(45deg, #ff0000, #ff6b00);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            margin-left: 10px;
+        }
+        
+        .intensity-level {
+            color: #ff0000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            margin-left: 10px;
         }
         
         .session-content {
@@ -357,6 +438,10 @@
             .gym-title {
                 font-size: 3.5rem;
             }
+            
+            .tab-nav {
+                gap: 20px;
+            }
         }
         
         @media (min-width: 1200px) {
@@ -388,517 +473,943 @@
         <header>
             <h1 class="gym-title">
                 <span class="dumbbell-icon">🏋️</span>
-                IRON FORGE
+                ELITE TRAINING SYSTEM
                 <span class="dumbbell-icon">🏋️</span>
             </h1>
-            <p class="subtitle">Professional Training Schedule • Progressive Overload • Maximum Gains</p>
+            <p class="subtitle">Professional Training Programs • Progressive Overload • Maximum Results</p>
         </header>
         
-        <div class="schedule-container">
-            <!-- Monday -->
-            <div class="day-card">
-                <div class="day-header">
-                    <div>
-                        <span class="day-name">Monday</span>
-                        <span class="muscle-focus">Chest & Triceps</span>
-                    </div>
-                    <div class="duration">2.5H</div>
-                </div>
-                <div class="session-content">
-                    <div class="section-title">Warm-up (15 min)</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Dynamic Stretching
-                                <span class="exercise-sets">5 min</span>
+        <!-- Tab Navigation -->
+        <div class="tab-container">
+            <div class="tab-nav">
+                <button class="tab-button active" data-tab="strength">
+                    <span class="tab-icon">💪</span>
+                    Strength Training
+                </button>
+                <button class="tab-button" data-tab="weightloss">
+                    <span class="tab-icon">🔥</span>
+                    Weight Loss Cardio
+                </button>
+            </div>
+            
+            <!-- Strength Training Schedule Tab -->
+            <div id="strength-tab" class="tab-content active">
+                <div class="schedule-container">
+                    <!-- Monday -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Monday</span>
+                                <span class="muscle-focus">Chest & Triceps</span>
                             </div>
-                            <div class="exercise-details">Arm circles, torso twists, leg swings. Focus on shoulder mobility.</div>
+                            <div class="duration">2.5H</div>
                         </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Light Treadmill
-                                <span class="exercise-sets">5 min</span>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (15 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dynamic Stretching
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Arm circles, torso twists, leg swings. Focus on shoulder mobility.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Treadmill
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Brisk walk at 5-6 km/h. Gradual incline increase.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Push-ups
+                                        <span class="exercise-sets">2×15</span>
+                                    </div>
+                                    <div class="exercise-details">Activate chest and triceps. Focus on full range of motion.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Brisk walk at 5-6 km/h. Gradual incline increase.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Push-ups
-                                <span class="exercise-sets">2×15</span>
+                            
+                            <div class="section-title">Main Exercises</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Bench Press
+                                        <span class="exercise-sets">4×8-10</span>
+                                    </div>
+                                    <div class="exercise-details">Barbell flat bench. Retract shoulder blades, arch slightly, drive through heels.</div>
+                                    <div class="exercise-tips">Increase weight each set. 90-120 sec rest.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Incline Dumbbell Press
+                                        <span class="exercise-sets">3×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">45-degree bench. Control negative, explode up. Squeeze at top.</div>
+                                    <div class="exercise-tips">Focus on upper chest development.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Cable Flyes
+                                        <span class="exercise-sets">3×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">High to low crossover. Constant tension, slight bend in elbows.</div>
+                                    <div class="exercise-tips">Peak contraction at center, controlled negative.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Close-Grip Bench Press
+                                        <span class="exercise-sets">4×8-10</span>
+                                    </div>
+                                    <div class="exercise-details">Hands shoulder-width. Elbows tucked, triceps focused.</div>
+                                    <div class="exercise-tips">Great for triceps and inner chest.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Overhead Triceps Extension
+                                        <span class="exercise-sets">3×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Cable or dumbbell. Keep elbows close to head, full extension.</div>
+                                    <div class="exercise-tips">Stretch at bottom, squeeze at top.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Triceps Pushdown
+                                        <span class="exercise-sets">3×15-20</span>
+                                    </div>
+                                    <div class="exercise-details">V-bar or rope attachment. Body slightly leaned forward.</div>
+                                    <div class="exercise-tips">Burnout set - go to failure on last set.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Activate chest and triceps. Focus on full range of motion.</div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Cardio Finisher</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Treadmill Incline Walk</span>
+                                    <span class="cardio-time">30 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">Incline 8-10%, speed 5-6 km/h. Maintain upright posture, engage core.</div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="section-title">Main Exercises</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Bench Press
-                                <span class="exercise-sets">4×8-10</span>
+                    <!-- Tuesday -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Tuesday</span>
+                                <span class="muscle-focus">Back & Biceps</span>
                             </div>
-                            <div class="exercise-details">Barbell flat bench. Retract shoulder blades, arch slightly, drive through heels.</div>
-                            <div class="exercise-tips">Increase weight each set. 90-120 sec rest.</div>
+                            <div class="duration">2H</div>
                         </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Incline Dumbbell Press
-                                <span class="exercise-sets">3×10-12</span>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Lat Activation
+                                        <span class="exercise-sets">2×15</span>
+                                    </div>
+                                    <div class="exercise-details">Light lat pulldowns. Focus on mind-muscle connection.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Scapular Mobility
+                                        <span class="exercise-sets">3 min</span>
+                                    </div>
+                                    <div class="exercise-details">Shoulder rolls, wall slides, band pull-aparts.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">45-degree bench. Control negative, explode up. Squeeze at top.</div>
-                            <div class="exercise-tips">Focus on upper chest development.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Cable Flyes
-                                <span class="exercise-sets">3×12-15</span>
+                            
+                            <div class="section-title">Main Exercises</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Deadlifts
+                                        <span class="exercise-sets">4×6-8</span>
+                                    </div>
+                                    <div class="exercise-details">Conventional or sumo stance. Brace core, neutral spine, drive through heels.</div>
+                                    <div class="exercise-tips">Heavy compound - 3 min rest between sets.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Pull-ups
+                                        <span class="exercise-sets">4×Max</span>
+                                    </div>
+                                    <div class="exercise-details">Wide grip. Full extension at bottom, chest to bar at top.</div>
+                                    <div class="exercise-tips">Use assisted machine if needed. Focus on controlled movement.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Bent Over Rows
+                                        <span class="exercise-sets">3×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">Barbell or dumbbell. Hinge at hips, back parallel to floor.</div>
+                                    <div class="exercise-tips">Squeeze shoulder blades together at top.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Seated Cable Rows
+                                        <span class="exercise-sets">3×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">V-grip attachment. Sit tall, pull to lower chest.</div>
+                                    <div class="exercise-tips">Controlled tempo: 2-1-2 (negative-hold-positive).</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Barbell Bicep Curls
+                                        <span class="exercise-sets">4×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">Standing, strict form. No swinging, elbows pinned to sides.</div>
+                                    <div class="exercise-tips">Superset with hammer curls for variety.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Hammer Curls
+                                        <span class="exercise-sets">3×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Dumbbells, neutral grip. Full extension, peak contraction.</div>
+                                    <div class="exercise-tips">Targets brachialis for thicker arms.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">High to low crossover. Constant tension, slight bend in elbows.</div>
-                            <div class="exercise-tips">Peak contraction at center, controlled negative.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Close-Grip Bench Press
-                                <span class="exercise-sets">4×8-10</span>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Cardio Finisher</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Stationary Bike Sprints</span>
+                                    <span class="cardio-time">25 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">5 min warm-up, 15×30s sprint/60s recovery, 5 min cool-down.</div>
                             </div>
-                            <div class="exercise-details">Hands shoulder-width. Elbows tucked, triceps focused.</div>
-                            <div class="exercise-tips">Great for triceps and inner chest.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Overhead Triceps Extension
-                                <span class="exercise-sets">3×12-15</span>
-                            </div>
-                            <div class="exercise-details">Cable or dumbbell. Keep elbows close to head, full extension.</div>
-                            <div class="exercise-tips">Stretch at bottom, squeeze at top.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Triceps Pushdown
-                                <span class="exercise-sets">3×15-20</span>
-                            </div>
-                            <div class="exercise-details">V-bar or rope attachment. Body slightly leaned forward.</div>
-                            <div class="exercise-tips">Burnout set - go to failure on last set.</div>
                         </div>
                     </div>
                     
-                    <div class="cardio-section">
-                        <div class="cardio-title">Cardio Finisher</div>
-                        <div class="cardio-details">
-                            <span class="cardio-type">Treadmill Incline Walk</span>
-                            <span class="cardio-time">30 MIN</span>
+                    <!-- Wednesday -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Wednesday</span>
+                                <span class="muscle-focus">Legs & Core</span>
+                            </div>
+                            <div class="duration">2.5H</div>
                         </div>
-                        <div class="cardio-instructions">Incline 8-10%, speed 5-6 km/h. Maintain upright posture, engage core.</div>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (15 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dynamic Leg Mobility
+                                        <span class="exercise-sets">8 min</span>
+                                    </div>
+                                    <div class="exercise-details">Leg swings, hip circles, walking lunges, bodyweight squats.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Leg Extensions
+                                        <span class="exercise-sets">2×20</span>
+                                    </div>
+                                    <div class="exercise-details">Activate quads with light weight, focus on contraction.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-title">Main Exercises</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Barbell Squats
+                                        <span class="exercise-sets">5×8-10</span>
+                                    </div>
+                                    <div class="exercise-details">Deep as mobility allows. Chest up, core tight, drive through heels.</div>
+                                    <div class="exercise-tips">Increase weight each set. 2-3 min rest.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Romanian Deadlifts
+                                        <span class="exercise-sets">4×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">Barbell or dumbbell. Soft knees, hinge at hips, hamstring stretch.</div>
+                                    <div class="exercise-tips">Focus on hamstring and glute activation.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Leg Press
+                                        <span class="exercise-sets">4×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">Feet shoulder-width, low position. Don't lock knees at top.</div>
+                                    <div class="exercise-tips">Go deep, control negative phase.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Walking Lunges
+                                        <span class="exercise-sets">3×20 steps</span>
+                                    </div>
+                                    <div class="exercise-details">Dumbbells or barbell. Maintain upright posture, knee over ankle.</div>
+                                    <div class="exercise-tips">Great for stability and unilateral strength.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Leg Extensions
+                                        <span class="exercise-sets">4×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Peak contraction at top, controlled negative. Squeeze quads.</div>
+                                    <div class="exercise-tips">Burnout sets for quad definition.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Lying Leg Curls
+                                        <span class="exercise-sets">4×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Full range of motion. Squeeze hamstrings at top.</div>
+                                    <div class="exercise-tips">Pre-exhaust before compound movements.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Standing Calf Raises
+                                        <span class="exercise-sets">5×15-20</span>
+                                    </div>
+                                    <div class="exercise-details">Full stretch at bottom, peak contraction at top.</div>
+                                    <div class="exercise-tips">High reps for calf development.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Hanging Leg Raises
+                                        <span class="exercise-sets">4×15-20</span>
+                                    </div>
+                                    <div class="exercise-details">Hanging from bar. Controlled movement, avoid swinging.</div>
+                                    <div class="exercise-tips">Advanced: add weight between feet.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Cardio Finisher</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Treadmill Intervals</span>
+                                    <span class="cardio-time">40 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">10 min warm-up, 5×3 min zone 3 / 2 min recovery, 5 min cool-down.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Thursday -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Thursday</span>
+                                <span class="muscle-focus">Shoulders & Arms</span>
+                            </div>
+                            <div class="duration">1.5H</div>
+                        </div>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Shoulder Mobility
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Band pull-aparts, shoulder dislocations, arm circles.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Face Pulls
+                                        <span class="exercise-sets">2×20</span>
+                                    </div>
+                                    <div class="exercise-details">Activate rear delts and rotator cuff.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-title">Main Exercises</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Overhead Press
+                                        <span class="exercise-sets">4×8-10</span>
+                                    </div>
+                                    <div class="exercise-details">Barbell or dumbbell standing. Brace core, slight knee bend.</div>
+                                    <div class="exercise-tips">Heavy compound for shoulder mass.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dumbbell Lateral Raises
+                                        <span class="exercise-sets">4×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Slight bend in elbows, raise to shoulder height.</div>
+                                    <div class="exercise-tips">Use moderate weight, focus on contraction.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Front Raises
+                                        <span class="exercise-sets">3×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Barbell or dumbbell. Raise to eye level, control negative.</div>
+                                    <div class="exercise-tips">Alternate arms or use both together.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Face Pulls
+                                        <span class="exercise-sets">4×15-20</span>
+                                    </div>
+                                    <div class="exercise-details">Rope attachment, high pulley. External rotation at peak.</div>
+                                    <div class="exercise-tips">Essential for shoulder health and posture.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Preacher Curls
+                                        <span class="exercise-sets">4×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">E-Z bar or dumbbell. Eliminate cheating, pure bicep isolation.</div>
+                                    <div class="exercise-tips">Stretch at bottom, peak contraction at top.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Skull Crushers
+                                        <span class="exercise-sets">4×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">E-Z bar lying on bench. Elbows fixed, only forearms move.</div>
+                                    <div class="exercise-tips">Keep elbows pointed toward ceiling.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Concentration Curls
+                                        <span class="exercise-sets">3×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Seated, elbow on inner thigh. Peak contraction, controlled negative.</div>
+                                    <div class="exercise-tips">Mind-muscle connection focus.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Triceps Kickbacks
+                                        <span class="exercise-sets">3×15-20</span>
+                                    </div>
+                                    <div class="exercise-details">Bent over, elbow fixed, extend arm fully.</div>
+                                    <div class="exercise-tips">Light weight, focus on contraction and squeeze.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Cardio Finisher</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Rowing Machine</span>
+                                    <span class="cardio-time">20 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">500m sprints with 60s rest between. Focus on powerful drive phase.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Friday -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Friday</span>
+                                <span class="muscle-focus">Full Body Power</span>
+                            </div>
+                            <div class="duration">2H</div>
+                        </div>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (15 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Full Body Dynamic
+                                        <span class="exercise-sets">10 min</span>
+                                    </div>
+                                    <div class="exercise-details">Jumping jacks, high knees, butt kicks, torso twists.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Compound Movements
+                                        <span class="exercise-sets">2×10</span>
+                                    </div>
+                                    <div class="exercise-details">Bodyweight squats, push-ups, inverted rows.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-title">Power Circuit (3 Rounds)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Power Cleans
+                                        <span class="exercise-sets">5×3</span>
+                                    </div>
+                                    <div class="exercise-details">Explosive movement from floor to shoulders. Triple extension.</div>
+                                    <div class="exercise-tips">Focus on technique over weight.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Box Jumps
+                                        <span class="exercise-sets">4×6</span>
+                                    </div>
+                                    <div class="exercise-details">Explosive vertical jump onto box. Step down, reset.</div>
+                                    <div class="exercise-tips">Height appropriate to skill level.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Kettlebell Swings
+                                        <span class="exercise-sets">4×15</span>
+                                    </div>
+                                    <div class="exercise-details">Hip hinge explosive movement. Bell to eye level.</div>
+                                    <div class="exercise-tips">Power from hips, not arms.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Medicine Ball Slams
+                                        <span class="exercise-sets">3×12</span>
+                                    </div>
+                                    <div class="exercise-details">Overhead slam with full extension. Catch on bounce.</div>
+                                    <div class="exercise-tips">Full body power expression.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Battle Ropes
+                                        <span class="exercise-sets">4×30s</span>
+                                    </div>
+                                    <div class="exercise-details">Alternating waves or double waves. Maintain intensity.</div>
+                                    <div class="exercise-tips">Core engaged, slight knee bend.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Farmer's Walks
+                                        <span class="exercise-sets">4×40m</span>
+                                    </div>
+                                    <div class="exercise-details">Heavy dumbbells or farmer's walk handles. Upright posture.</div>
+                                    <div class="exercise-tips">Grip strength and core stability.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Cardio Finisher</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">HIIT Sprints</span>
+                                    <span class="cardio-time">25 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">Treadmill or outdoor: 10×20s all-out sprint / 40s walk recovery.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Saturday -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Saturday</span>
+                                <span class="muscle-focus">Active Recovery</span>
+                            </div>
+                            <div class="duration">1H</div>
+                        </div>
+                        <div class="session-content">
+                            <div class="section-title">Recovery Protocol</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Foam Rolling
+                                        <span class="exercise-sets">20 min</span>
+                                    </div>
+                                    <div class="exercise-details">Full body myofascial release. Focus on tight areas from week.</div>
+                                    <div class="exercise-tips">Spend extra time on legs and back.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Static Stretching
+                                        <span class="exercise-sets">15 min</span>
+                                    </div>
+                                    <div class="exercise-details">Hold each stretch 30-45 seconds. Focus on hip flexors, hamstrings, chest.</div>
+                                    <div class="exercise-tips">No bouncing, breathe deeply.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Yoga Flow
+                                        <span class="exercise-sets">15 min</span>
+                                    </div>
+                                    <div class="exercise-details">Sun salutations, downward dog, child's pose, pigeon pose.</div>
+                                    <div class="exercise-tips">Focus on mobility, not strength.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Zone 1 Cardio
+                                        <span class="exercise-sets">30 min</span>
+                                    </div>
+                                    <div class="exercise-details">Very light pace - walking, swimming, or cycling.</div>
+                                    <div class="exercise-tips">Should be able to hold conversation easily.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Optional</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Nature Walk / Light Swim</span>
+                                    <span class="cardio-time">30-45 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">Low impact, recreational activity. Mental recovery as important as physical.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Tuesday -->
-            <div class="day-card">
-                <div class="day-header">
-                    <div>
-                        <span class="day-name">Tuesday</span>
-                        <span class="muscle-focus">Back & Biceps</span>
-                    </div>
-                    <div class="duration">2H</div>
-                </div>
-                <div class="session-content">
-                    <div class="section-title">Warm-up (10 min)</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Lat Activation
-                                <span class="exercise-sets">2×15</span>
+            <!-- Weight Loss Cardio Schedule Tab -->
+            <div id="weightloss-tab" class="tab-content">
+                <div class="schedule-container">
+                    <!-- Monday: HIIT Intensive -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Monday</span>
+                                <span class="muscle-focus">HIIT Intensive</span>
+                                <span class="intensity-level">Level 5</span>
                             </div>
-                            <div class="exercise-details">Light lat pulldowns. Focus on mind-muscle connection.</div>
+                            <div class="duration">1.5H</div>
                         </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Scapular Mobility
-                                <span class="exercise-sets">3 min</span>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (15 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dynamic Mobility
+                                        <span class="exercise-sets">10 min</span>
+                                    </div>
+                                    <div class="exercise-details">High knees, butt kicks, leg swings, torso rotations, arm circles.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Jog
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Progressive pace increase from walk to light jog.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Shoulder rolls, wall slides, band pull-aparts.</div>
-                        </div>
-                    </div>
-                    
-                    <div class="section-title">Main Exercises</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Deadlifts
-                                <span class="exercise-sets">4×6-8</span>
+                            
+                            <div class="section-title">HIIT Protocol (45 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Treadmill Sprints
+                                        <span class="exercise-sets">10×30s</span>
+                                    </div>
+                                    <div class="exercise-details">All-out sprint at 18-20 km/h, incline 2%. Max effort.</div>
+                                    <div class="exercise-tips">Recovery: 60s walk at 5 km/h between sprints.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Battle Ropes
+                                        <span class="exercise-sets">5×60s</span>
+                                    </div>
+                                    <div class="exercise-details">Alternating waves at maximum intensity. Full body engagement.</div>
+                                    <div class="exercise-tips">30s rest between sets. Focus on core stability.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Assault Bike Intervals
+                                        <span class="exercise-sets">8×45s</span>
+                                    </div>
+                                    <div class="exercise-details">Max RPM, maintain 80+ RPM throughout interval.</div>
+                                    <div class="exercise-tips">Recovery: 45s slow pedaling. Heart rate above 85% max.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Burpees with Tuck Jump
+                                        <span class="exercise-sets">5×15 reps</span>
+                                    </div>
+                                    <div class="exercise-details">Full burpee with explosive tuck jump at completion.</div>
+                                    <div class="exercise-tips">No rest between burpees, 60s rest between sets.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Conventional or sumo stance. Brace core, neutral spine, drive through heels.</div>
-                            <div class="exercise-tips">Heavy compound - 3 min rest between sets.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Pull-ups
-                                <span class="exercise-sets">4×Max</span>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Cool Down & Stretch</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Static Stretching</span>
+                                    <span class="cardio-time">15 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">Focus on hamstrings, quads, calves, hip flexors. Hold each stretch 45-60 seconds.</div>
                             </div>
-                            <div class="exercise-details">Wide grip. Full extension at bottom, chest to bar at top.</div>
-                            <div class="exercise-tips">Use assisted machine if needed. Focus on controlled movement.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Bent Over Rows
-                                <span class="exercise-sets">3×10-12</span>
-                            </div>
-                            <div class="exercise-details">Barbell or dumbbell. Hinge at hips, back parallel to floor.</div>
-                            <div class="exercise-tips">Squeeze shoulder blades together at top.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Seated Cable Rows
-                                <span class="exercise-sets">3×10-12</span>
-                            </div>
-                            <div class="exercise-details">V-grip attachment. Sit tall, pull to lower chest.</div>
-                            <div class="exercise-tips">Controlled tempo: 2-1-2 (negative-hold-positive).</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Barbell Bicep Curls
-                                <span class="exercise-sets">4×10-12</span>
-                            </div>
-                            <div class="exercise-details">Standing, strict form. No swinging, elbows pinned to sides.</div>
-                            <div class="exercise-tips">Superset with hammer curls for variety.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Hammer Curls
-                                <span class="exercise-sets">3×12-15</span>
-                            </div>
-                            <div class="exercise-details">Dumbbells, neutral grip. Full extension, peak contraction.</div>
-                            <div class="exercise-tips">Targets brachialis for thicker arms.</div>
-                        </div>
-                    </div>
-                    
-                    <div class="cardio-section">
-                        <div class="cardio-title">Cardio Finisher</div>
-                        <div class="cardio-details">
-                            <span class="cardio-type">Stationary Bike Sprints</span>
-                            <span class="cardio-time">25 MIN</span>
-                        </div>
-                        <div class="cardio-instructions">5 min warm-up, 15×30s sprint/60s recovery, 5 min cool-down.</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Wednesday -->
-            <div class="day-card">
-                <div class="day-header">
-                    <div>
-                        <span class="day-name">Wednesday</span>
-                        <span class="muscle-focus">Legs & Core</span>
-                    </div>
-                    <div class="duration">2.5H</div>
-                </div>
-                <div class="session-content">
-                    <div class="section-title">Warm-up (15 min)</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Dynamic Leg Mobility
-                                <span class="exercise-sets">8 min</span>
-                            </div>
-                            <div class="exercise-details">Leg swings, hip circles, walking lunges, bodyweight squats.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Light Leg Extensions
-                                <span class="exercise-sets">2×20</span>
-                            </div>
-                            <div class="exercise-details">Activate quads with light weight, focus on contraction.</div>
                         </div>
                     </div>
                     
-                    <div class="section-title">Main Exercises</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Barbell Squats
-                                <span class="exercise-sets">5×8-10</span>
+                    <!-- Tuesday: Steady State Endurance -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Tuesday</span>
+                                <span class="muscle-focus">Endurance Burn</span>
+                                <span class="intensity-level">Level 4</span>
                             </div>
-                            <div class="exercise-details">Deep as mobility allows. Chest up, core tight, drive through heels.</div>
-                            <div class="exercise-tips">Increase weight each set. 2-3 min rest.</div>
+                            <div class="duration">1.5H</div>
                         </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Romanian Deadlifts
-                                <span class="exercise-sets">4×10-12</span>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dynamic Stretching
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Focus on lower body mobility and thoracic spine rotation.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Cardio
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Gradual build-up to target heart rate zone.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Barbell or dumbbell. Soft knees, hinge at hips, hamstring stretch.</div>
-                            <div class="exercise-tips">Focus on hamstring and glute activation.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Leg Press
-                                <span class="exercise-sets">4×10-12</span>
+                            
+                            <div class="section-title">Endurance Protocol (60 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Incline Treadmill Power Walk
+                                        <span class="exercise-sets">30 min</span>
+                                    </div>
+                                    <div class="exercise-details">Incline 12-15%, speed 6-7 km/h. Maintain heart rate at 70-75% max.</div>
+                                    <div class="exercise-tips">Engage core, pump arms, maintain upright posture.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">StairMaster Intervals
+                                        <span class="exercise-sets">20 min</span>
+                                    </div>
+                                    <div class="exercise-details">Level 12-15, alternate 3 min steady / 1 min accelerated pace.</div>
+                                    <div class="exercise-tips">No holding onto handles, maintain proper form.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Rowing Machine Steady State
+                                        <span class="exercise-sets">20 min</span>
+                                    </div>
+                                    <div class="exercise-details">Maintain 22-24 strokes/min, consistent power output.</div>
+                                    <div class="exercise-tips">Focus on powerful leg drive, smooth transition.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Feet shoulder-width, low position. Don't lock knees at top.</div>
-                            <div class="exercise-tips">Go deep, control negative phase.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Walking Lunges
-                                <span class="exercise-sets">3×20 steps</span>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Cool Down & Mobility</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Foam Rolling & Stretching</span>
+                                    <span class="cardio-time">20 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">Full body foam rolling followed by deep static stretching.</div>
                             </div>
-                            <div class="exercise-details">Dumbbells or barbell. Maintain upright posture, knee over ankle.</div>
-                            <div class="exercise-tips">Great for stability and unilateral strength.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Leg Extensions
-                                <span class="exercise-sets">4×12-15</span>
-                            </div>
-                            <div class="exercise-details">Peak contraction at top, controlled negative. Squeeze quads.</div>
-                            <div class="exercise-tips">Burnout sets for quad definition.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Lying Leg Curls
-                                <span class="exercise-sets">4×12-15</span>
-                            </div>
-                            <div class="exercise-details">Full range of motion. Squeeze hamstrings at top.</div>
-                            <div class="exercise-tips">Pre-exhaust before compound movements.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Standing Calf Raises
-                                <span class="exercise-sets">5×15-20</span>
-                            </div>
-                            <div class="exercise-details">Full stretch at bottom, peak contraction at top.</div>
-                            <div class="exercise-tips">High reps for calf development.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Hanging Leg Raises
-                                <span class="exercise-sets">4×15-20</span>
-                            </div>
-                            <div class="exercise-details">Hanging from bar. Controlled movement, avoid swinging.</div>
-                            <div class="exercise-tips">Advanced: add weight between feet.</div>
                         </div>
                     </div>
                     
-                    <div class="cardio-section">
-                        <div class="cardio-title">Cardio Finisher</div>
-                        <div class="cardio-details">
-                            <span class="cardio-type">Treadmill Intervals</span>
-                            <span class="cardio-time">40 MIN</span>
-                        </div>
-                        <div class="cardio-instructions">10 min warm-up, 5×3 min zone 3 / 2 min recovery, 5 min cool-down.</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Thursday -->
-            <div class="day-card">
-                <div class="day-header">
-                    <div>
-                        <span class="day-name">Thursday</span>
-                        <span class="muscle-focus">Shoulders & Arms</span>
-                    </div>
-                    <div class="duration">1.5H</div>
-                </div>
-                <div class="session-content">
-                    <div class="section-title">Warm-up (10 min)</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Shoulder Mobility
-                                <span class="exercise-sets">5 min</span>
+                    <!-- Wednesday: Hill Sprints & Incline -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Wednesday</span>
+                                <span class="muscle-focus">Hill & Power</span>
+                                <span class="intensity-level">Level 5</span>
                             </div>
-                            <div class="exercise-details">Band pull-aparts, shoulder dislocations, arm circles.</div>
+                            <div class="duration">1.25H</div>
                         </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Light Face Pulls
-                                <span class="exercise-sets">2×20</span>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (15 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dynamic Leg Activation
+                                        <span class="exercise-sets">8 min</span>
+                                    </div>
+                                    <div class="exercise-details">Walking lunges, leg swings, high skips, glute bridges.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Hill Warm-up
+                                        <span class="exercise-sets">7 min</span>
+                                    </div>
+                                    <div class="exercise-details">Progressive incline walking to prepare muscles.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Activate rear delts and rotator cuff.</div>
-                        </div>
-                    </div>
-                    
-                    <div class="section-title">Main Exercises</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Overhead Press
-                                <span class="exercise-sets">4×8-10</span>
+                            
+                            <div class="section-title">Hill & Power Protocol (50 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Treadmill Hill Sprints
+                                        <span class="exercise-sets">8×45s</span>
+                                    </div>
+                                    <div class="exercise-details">Incline 12-15%, speed 14-16 km/h. Maximum effort.</div>
+                                    <div class="exercise-tips">Recovery: 75s walk at 5 km/h, incline 0%.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Sled Pushes
+                                        <span class="exercise-sets">5×40m</span>
+                                    </div>
+                                    <div class="exercise-details">Heavy sled loaded with 80-100% bodyweight. Explosive pushes.</div>
+                                    <div class="exercise-tips">90s rest between pushes. Full body power output.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Stair Sprints
+                                        <span class="exercise-sets">10× flights</span>
+                                    </div>
+                                    <div class="exercise-details">Maximum speed up 4-5 flights of stairs. Walk down for recovery.</div>
+                                    <div class="exercise-tips">Focus on explosive power, drive through balls of feet.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Mountain Climbers
+                                        <span class="exercise-sets">4×60s</span>
+                                    </div>
+                                    <div class="exercise-details">High intensity, fast pace. Maintain plank position.</div>
+                                    <div class="exercise-tips">Core engaged, avoid hip sagging. 30s rest between sets.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Barbell or dumbbell standing. Brace core, slight knee bend.</div>
-                            <div class="exercise-tips">Heavy compound for shoulder mass.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Dumbbell Lateral Raises
-                                <span class="exercise-sets">4×12-15</span>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Recovery Protocol</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Ice Bath & Compression</span>
+                                    <span class="cardio-time">15 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">Optional ice bath (10-12°C) for 10-12 minutes followed by compression gear.</div>
                             </div>
-                            <div class="exercise-details">Slight bend in elbows, raise to shoulder height.</div>
-                            <div class="exercise-tips">Use moderate weight, focus on contraction.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Front Raises
-                                <span class="exercise-sets">3×12-15</span>
-                            </div>
-                            <div class="exercise-details">Barbell or dumbbell. Raise to eye level, control negative.</div>
-                            <div class="exercise-tips">Alternate arms or use both together.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Face Pulls
-                                <span class="exercise-sets">4×15-20</span>
-                            </div>
-                            <div class="exercise-details">Rope attachment, high pulley. External rotation at peak.</div>
-                            <div class="exercise-tips">Essential for shoulder health and posture.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Preacher Curls
-                                <span class="exercise-sets">4×10-12</span>
-                            </div>
-                            <div class="exercise-details">E-Z bar or dumbbell. Eliminate cheating, pure bicep isolation.</div>
-                            <div class="exercise-tips">Stretch at bottom, peak contraction at top.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Skull Crushers
-                                <span class="exercise-sets">4×10-12</span>
-                            </div>
-                            <div class="exercise-details">E-Z bar lying on bench. Elbows fixed, only forearms move.</div>
-                            <div class="exercise-tips">Keep elbows pointed toward ceiling.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Concentration Curls
-                                <span class="exercise-sets">3×12-15</span>
-                            </div>
-                            <div class="exercise-details">Seated, elbow on inner thigh. Peak contraction, controlled negative.</div>
-                            <div class="exercise-tips">Mind-muscle connection focus.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Triceps Kickbacks
-                                <span class="exercise-sets">3×15-20</span>
-                            </div>
-                            <div class="exercise-details">Bent over, elbow fixed, extend arm fully.</div>
-                            <div class="exercise-tips">Light weight, focus on contraction and squeeze.</div>
                         </div>
                     </div>
                     
-                    <div class="cardio-section">
-                        <div class="cardio-title">Cardio Finisher</div>
-                        <div class="cardio-details">
-                            <span class="cardio-type">Rowing Machine</span>
-                            <span class="cardio-time">20 MIN</span>
-                        </div>
-                        <div class="cardio-instructions">500m sprints with 60s rest between. Focus on powerful drive phase.</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Friday -->
-            <div class="day-card">
-                <div class="day-header">
-                    <div>
-                        <span class="day-name">Friday</span>
-                        <span class="muscle-focus">Full Body Power</span>
-                    </div>
-                    <div class="duration">2H</div>
-                </div>
-                <div class="session-content">
-                    <div class="section-title">Warm-up (15 min)</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Full Body Dynamic
-                                <span class="exercise-sets">10 min</span>
+                    <!-- Thursday: Circuit Training -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Thursday</span>
+                                <span class="muscle-focus">Cardio Circuit</span>
+                                <span class="intensity-level">Level 4</span>
                             </div>
-                            <div class="exercise-details">Jumping jacks, high knees, butt kicks, torso twists.</div>
+                            <div class="duration">1.25H</div>
                         </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Light Compound Movements
-                                <span class="exercise-sets">2×10</span>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Full Body Mobility
+                                        <span class="exercise-sets">10 min</span>
+                                    </div>
+                                    <div class="exercise-details">Joint rotations, dynamic stretching, light calisthenics.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Bodyweight squats, push-ups, inverted rows.</div>
-                        </div>
-                    </div>
-                    
-                    <div class="section-title">Power Circuit (3 Rounds)</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Power Cleans
-                                <span class="exercise-sets">5×3</span>
+                            
+                            <div class="section-title">Circuit Protocol (55 min - 4 Rounds)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Assault Bike
+                                        <span class="exercise-sets">500m</span>
+                                    </div>
+                                    <div class="exercise-details">Max effort, complete as fast as possible. Target < 1:30.</div>
+                                    <div class="exercise-tips">Transition immediately to next station.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Box Jumps
+                                        <span class="exercise-sets">15 reps</span>
+                                    </div>
+                                    <div class="exercise-details">24-30 inch box. Explosive jumps, soft landings.</div>
+                                    <div class="exercise-tips">Focus on power generation from hips.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Rower Sprints
+                                        <span class="exercise-sets">250m</span>
+                                    </div>
+                                    <div class="exercise-details">All-out sprint, target < 45 seconds. Powerful leg drive.</div>
+                                    <div class="exercise-tips">Maintain proper rowing form at high intensity.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Med Ball Slams
+                                        <span class="exercise-sets">20 reps</span>
+                                    </div>
+                                    <div class="exercise-details">20-30 lb medicine ball. Full overhead extension.</div>
+                                    <div class="exercise-tips">Explosive power from core, catch on bounce.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Jump Rope
+                                        <span class="exercise-sets">100 reps</span>
+                                    </div>
+                                    <div class="exercise-details">Double unders or high-speed singles. Minimal mistakes.</div>
+                                    <div class="exercise-tips">Light on feet, quick wrist rotation.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Battle Ropes
+                                        <span class="exercise-sets">30s Max Effort</span>
+                                    </div>
+                                    <div class="exercise-details">Double waves or alternating slams at maximum intensity.</div>
+                                    <div class="exercise-tips">Full body engagement, core stability.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Explosive movement from floor to shoulders. Triple extension.</div>
-                            <div class="exercise-tips">Focus on technique over weight.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Box Jumps
-                                <span class="exercise-sets">4×6</span>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Circuit Rest Protocol</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Active Recovery</span>
+                                    <span class="cardio-time">3 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">3 minutes active recovery between circuits (light walking, stretching).</div>
                             </div>
-                            <div class="exercise-details">Explosive vertical jump onto box. Step down, reset.</div>
-                            <div class="exercise-tips">Height appropriate to skill level.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Kettlebell Swings
-                                <span class="exercise-sets">4×15</span>
-                            </div>
-                            <div class="exercise-details">Hip hinge explosive movement. Bell to eye level.</div>
-                            <div class="exercise-tips">Power from hips, not arms.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Medicine Ball Slams
-                                <span class="exercise-sets">3×12</span>
-                            </div>
-                            <div class="exercise-details">Overhead slam with full extension. Catch on bounce.</div>
-                            <div class="exercise-tips">Full body power expression.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Battle Ropes
-                                <span class="exercise-sets">4×30s</span>
-                            </div>
-                            <div class="exercise-details">Alternating waves or double waves. Maintain intensity.</div>
-                            <div class="exercise-tips">Core engaged, slight knee bend.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Farmer's Walks
-                                <span class="exercise-sets">4×40m</span>
-                            </div>
-                            <div class="exercise-details">Heavy dumbbells or farmer's walk handles. Upright posture.</div>
-                            <div class="exercise-tips">Grip strength and core stability.</div>
                         </div>
                     </div>
                     
-                    <div class="cardio-section">
-                        <div class="cardio-title">Cardio Finisher</div>
-                        <div class="cardio-details">
-                            <span class="cardio-type">HIIT Sprints</span>
-                            <span class="cardio-time">25 MIN</span>
-                        </div>
-                        <div class="cardio-instructions">Treadmill or outdoor: 10×20s all-out sprint / 40s walk recovery.</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Saturday -->
-            <div class="day-card">
-                <div class="day-header">
-                    <div>
-                        <span class="day-name">Saturday</span>
-                        <span class="muscle-focus">Active Recovery</span>
-                    </div>
-                    <div class="duration">1H</div>
-                </div>
-                <div class="session-content">
-                    <div class="section-title">Recovery Protocol</div>
-                    <div class="exercise-grid">
-                        <div class="exercise-card">
-                            <div class="exercise-name">Foam Rolling
-                                <span class="exercise-sets">20 min</span>
+                    <!-- Friday: Fartlek & Intervals -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Friday</span>
+                                <span class="muscle-focus">Fartlek Training</span>
+                                <span class="intensity-level">Level 4</span>
                             </div>
-                            <div class="exercise-details">Full body myofascial release. Focus on tight areas from week.</div>
-                            <div class="exercise-tips">Spend extra time on legs and back.</div>
+                            <div class="duration">1.5H</div>
                         </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Static Stretching
-                                <span class="exercise-sets">15 min</span>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (15 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Progressive Run
+                                        <span class="exercise-sets">15 min</span>
+                                    </div>
+                                    <div class="exercise-details">Start walking, progress to light jog, then moderate pace.</div>
+                                    <div class="exercise-tips">Gradually increase heart rate to zone 2-3.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Hold each stretch 30-45 seconds. Focus on hip flexors, hamstrings, chest.</div>
-                            <div class="exercise-tips">No bouncing, breathe deeply.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Light Yoga Flow
-                                <span class="exercise-sets">15 min</span>
+                            
+                            <div class="section-title">Fartlek Protocol (60 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Variable Pace Running
+                                        <span class="exercise-sets">45 min</span>
+                                    </div>
+                                    <div class="exercise-details">Alternate between: 3 min hard (85% max HR), 2 min moderate (70% max HR), 1 min easy (60% max HR).</div>
+                                    <div class="exercise-tips">Outdoor running preferred, can use treadmill with manual speed changes.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Track Intervals
+                                        <span class="exercise-sets">6×400m</span>
+                                    </div>
+                                    <div class="exercise-details">Hard effort on straights, moderate on curves. Target pace: 1:45-2:00 per 400m.</div>
+                                    <div class="exercise-tips">Focus on maintaining form when fatigued.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Hill Repeats
+                                        <span class="exercise-sets">8×200m</span>
+                                    </div>
+                                    <div class="exercise-details">Find 6-8% grade hill. Sprint up, walk/jog down for recovery.</div>
+                                    <div class="exercise-tips">Drive knees, pump arms, lean slightly into hill.</div>
+                                </div>
                             </div>
-                            <div class="exercise-details">Sun salutations, downward dog, child's pose, pigeon pose.</div>
-                            <div class="exercise-tips">Focus on mobility, not strength.</div>
-                        </div>
-                        <div class="exercise-card">
-                            <div class="exercise-name">Zone 1 Cardio
-                                <span class="exercise-sets">30 min</span>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Cool Down</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Walking & Stretching</span>
+                                    <span class="cardio-time">20 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">10 min easy walk followed by 10 min full body stretching.</div>
                             </div>
-                            <div class="exercise-details">Very light pace - walking, swimming, or cycling.</div>
-                            <div class="exercise-tips">Should be able to hold conversation easily.</div>
                         </div>
                     </div>
                     
-                    <div class="cardio-section">
-                        <div class="cardio-title">Optional</div>
-                        <div class="cardio-details">
-                            <span class="cardio-type">Nature Walk / Light Swim</span>
-                            <span class="cardio-time">30-45 MIN</span>
+                    <!-- Saturday: Cross-Training & Active Recovery -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Saturday</span>
+                                <span class="muscle-focus">Cross-Training</span>
+                                <span class="intensity-level">Level 3</span>
+                            </div>
+                            <div class="duration">1.5H</div>
                         </div>
-                        <div class="cardio-instructions">Low impact, recreational activity. Mental recovery as important as physical.</div>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Low Impact Mobility
+                                        <span class="exercise-sets">10 min</span>
+                                    </div>
+                                    <div class="exercise-details">Joint circles, light dynamic stretching, breathing exercises.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-title">Cross-Training Protocol (50 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Swimming Intervals
+                                        <span class="exercise-sets">30 min</span>
+                                    </div>
+                                    <div class="exercise-details">Freestyle: 10×100m with 30s rest between. Focus on technique.</div>
+                                    <div class="exercise-tips">Alternate strokes if proficient (butterfly, breaststroke).</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Cycling (Outdoor/Spin)
+                                        <span class="exercise-sets">40 min</span>
+                                    </div>
+                                    <div class="exercise-details">Hilly terrain or spin class with resistance intervals.</div>
+                                    <div class="exercise-tips">Maintain 80-90 RPM cadence, vary resistance.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Elliptical Intervals
+                                        <span class="exercise-sets">25 min</span>
+                                    </div>
+                                    <div class="exercise-details">Resistance level 12-15, alternate 3 min hard / 2 min recovery.</div>
+                                    <div class="exercise-tips">No holding onto handles, engage core and glutes.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Rowing Pyramid
+                                        <span class="exercise-sets">20 min</span>
+                                    </div>
+                                    <div class="exercise-details">500m, 400m, 300m, 200m, 100m with equal distance recovery rowing.</div>
+                                    <div class="exercise-tips">Each interval faster than previous. Focus on power application.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Recovery & Regeneration</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Sauna & Mobility</span>
+                                    <span class="cardio-time">30 MIN</span>
+                                </div>
+                                <div class="cardio-instructions">15 min sauna (80-85°C) followed by 15 min mobility work and stretching.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="workout-tips">
+        <!-- Program Tips Section -->
+        <div class="workout-tips" id="strength-tips">
             <div class="tips-title">Pro Training Principles</div>
             <div class="tips-grid">
                 <div class="tip-item">
@@ -935,11 +1446,112 @@
                 </div>
             </div>
         </div>
+
+        <div class="workout-tips" id="weightloss-tips" style="display: none;">
+            <div class="tips-title">Weight Loss Cardio Principles</div>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <div class="tip-icon">🔥</div>
+                    <div class="tip-text"><strong>Afterburn Effect (EPOC):</strong> HIIT creates 24-48 hour metabolic boost. Train hard to maximize calorie burn post-workout.</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🔄</div>
+                    <div class="tip-text"><strong>Interval Variation:</strong> Constantly change interval length and intensity to prevent adaptation and maximize fat loss.</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">❤️</div>
+                    <div class="tip-text"><strong>Heart Rate Zones:</strong> Train in Zone 4-5 for HIIT, Zone 3 for endurance. Use heart rate monitor for accuracy.</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">⚡</div>
+                    <div class="tip-text"><strong>Power Output:</strong> Focus on maintaining power throughout workout, not just completing time. Quality over quantity.</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🍽️</div>
+                    <div class="tip-text"><strong>Fasted Training:</strong> Consider fasted cardio in morning (if medically appropriate) to enhance fat oxidation.</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">💧</div>
+                    <div class="tip-text"><strong>Hydration Strategy:</strong> Drink 500ml water 30min pre-workout, sip during, 1L post-workout with electrolytes.</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">📊</div>
+                    <div class="tip-text"><strong>Progress Tracking:</strong> Log distance, time, heart rate, RPE. Increase intensity weekly by 5-10%.</div>
+                </div>
+                <div class="tip-item">
+                    <div class="tip-icon">🛌</div>
+                    <div class="tip-text"><strong>Sleep & Recovery:</strong> 7-9 hours quality sleep essential for hormone regulation and recovery from intense cardio.</div>
+                </div>
+            </div>
+        </div>
         
         <footer>
-            <p><span class="footer-highlight">IRON FORGE TRAINING SYSTEM</span> • Designed for Maximum Hypertrophy & Strength Gains</p>
+            <p><span class="footer-highlight">ELITE TRAINING SYSTEM</span> • Professional Programs for Maximum Results</p>
             <p>Sunday: Complete Rest Day • Listen to Your Body • Consistency Beats Intensity</p>
+            <p style="margin-top: 10px;">Switch between tabs to explore different training programs tailored to your goals</p>
         </footer>
     </div>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const strengthTips = document.getElementById('strength-tips');
+            const weightlossTips = document.getElementById('weightloss-tips');
+            
+            // Function to switch tabs
+            function switchTab(tabId) {
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Remove active class from all buttons
+                tabButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+                
+                // Show the selected tab content
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+                
+                // Add active class to the clicked button
+                document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+                
+                // Show/hide the appropriate tips section
+                if (tabId === 'strength') {
+                    strengthTips.style.display = 'block';
+                    weightlossTips.style.display = 'none';
+                } else {
+                    strengthTips.style.display = 'none';
+                    weightlossTips.style.display = 'block';
+                }
+                
+                // Smooth scroll to top of content
+                document.querySelector('.tab-container').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Add click event listeners to tab buttons
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    switchTab(tabId);
+                });
+            });
+            
+            // Check for hash in URL to load specific tab
+            window.addEventListener('load', function() {
+                const hash = window.location.hash.substring(1);
+                if (hash === 'weightloss' || hash === 'cardio') {
+                    switchTab('weightloss');
+                } else {
+                    // Default to strength training
+                    switchTab('strength');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
