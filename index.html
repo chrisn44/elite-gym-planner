@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏋️ ELITE TRAINING SYSTEM Gym Schedule</title>
+    <title>🏋️ Elite Training System</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>">
     <style>
         * {
@@ -52,7 +52,7 @@
         }
         
         .gym-title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 900;
             background: linear-gradient(45deg, #ff4700, #ff8500, #00b4d8, #0096c7);
             -webkit-background-clip: text;
@@ -69,7 +69,7 @@
         }
         
         .dumbbell-icon {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             filter: drop-shadow(0 0 10px rgba(255, 71, 0, 0.5));
             animation: pulse 2s infinite;
         }
@@ -105,20 +105,20 @@
             background: rgba(30, 30, 30, 0.8);
             border: 2px solid rgba(255, 71, 0, 0.3);
             color: #adb5bd;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            min-width: 200px;
+            min-width: 180px;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
         
         .tab-button:hover {
@@ -136,7 +136,7 @@
         }
         
         .tab-icon {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
         
         .tab-content {
@@ -363,6 +363,119 @@
             line-height: 1.5;
         }
         
+        /* Nutrition Specific Styles */
+        .meal-card {
+            background: rgba(30, 50, 40, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #00b894;
+            transition: all 0.3s ease;
+        }
+        
+        .meal-card:hover {
+            transform: translateX(5px);
+            background: rgba(30, 60, 45, 0.9);
+        }
+        
+        .meal-time {
+            color: #00b894;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .meal-time::before {
+            content: '🍽️';
+            margin-right: 10px;
+        }
+        
+        .meal-option {
+            background: rgba(40, 40, 40, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid #0984e3;
+        }
+        
+        .meal-option-title {
+            color: #74b9ff;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .meal-option-title::before {
+            content: '✓';
+            margin-right: 8px;
+            color: #00b894;
+        }
+        
+        .macros {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .macro-item {
+            background: rgba(0, 180, 216, 0.2);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #90e0ef;
+        }
+        
+        .fastfood-section {
+            background: rgba(60, 40, 30, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 133, 0, 0.3);
+        }
+        
+        .fastfood-title {
+            color: #ff8500;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .fastfood-option {
+            background: rgba(50, 35, 25, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ff7675;
+        }
+        
+        .fastfood-name {
+            color: #ff7675;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fastfood-name::before {
+            content: '🍔';
+            margin-right: 10px;
+        }
+        
+        .fastfood-tips {
+            color: #fab1a0;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
         .workout-tips {
             background: rgba(30, 30, 30, 0.9);
             border-radius: 15px;
@@ -436,17 +549,31 @@
             }
             
             .gym-title {
-                font-size: 3.5rem;
+                font-size: 2.8rem;
             }
             
             .tab-nav {
-                gap: 20px;
+                gap: 15px;
+            }
+            
+            .tab-button {
+                min-width: 160px;
+                padding: 12px 20px;
+                font-size: 1rem;
             }
         }
         
         @media (min-width: 1200px) {
             .schedule-container {
                 grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .tab-nav {
+                gap: 20px;
+            }
+            
+            .tab-button {
+                min-width: 180px;
             }
         }
         
@@ -476,7 +603,7 @@
                 ELITE TRAINING SYSTEM
                 <span class="dumbbell-icon">🏋️</span>
             </h1>
-            <p class="subtitle">Professional Training Programs • Progressive Overload • Maximum Results</p>
+            <p class="subtitle">Professional Training Programs • Science-Based Nutrition • Maximum Results</p>
         </header>
         
         <!-- Tab Navigation -->
@@ -484,11 +611,19 @@
             <div class="tab-nav">
                 <button class="tab-button active" data-tab="strength">
                     <span class="tab-icon">💪</span>
-                    Strength Training
+                    Strength
                 </button>
                 <button class="tab-button" data-tab="weightloss">
                     <span class="tab-icon">🔥</span>
-                    Weight Loss Cardio
+                    Cardio
+                </button>
+                <button class="tab-button" data-tab="abs">
+                    <span class="tab-icon">🦵</span>
+                    Abs & Core
+                </button>
+                <button class="tab-button" data-tab="nutrition">
+                    <span class="tab-icon">🍎</span>
+                    Nutrition
                 </button>
             </div>
             
@@ -1406,6 +1541,721 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Abs & Core Schedule Tab -->
+            <div id="abs-tab" class="tab-content">
+                <div class="schedule-container">
+                    <!-- Monday: Upper Abs Focus -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Monday</span>
+                                <span class="muscle-focus">Upper Abs</span>
+                                <span class="intensity-level">Level 4</span>
+                            </div>
+                            <div class="duration">45 MIN</div>
+                        </div>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dynamic Core Activation
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Cat-cow stretches, bird-dogs, dead bugs, plank shoulder taps.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Cardio
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Jumping jacks, high knees, mountain climbers to increase blood flow.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-title">Upper Abs Protocol (30 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Decline Crunches
+                                        <span class="exercise-sets">4×20</span>
+                                    </div>
+                                    <div class="exercise-details">30-degree decline bench. Crunch up, focus on upper abs contraction.</div>
+                                    <div class="exercise-tips">Hold contraction for 2 seconds at top, slow negative.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Cable Crunches
+                                        <span class="exercise-sets">4×15</span>
+                                    </div>
+                                    <div class="exercise-details">Kneeling, rope attachment. Crunch down, don't use hip flexors.</div>
+                                    <div class="exercise-tips">Focus on curling spine, not just bending at hips.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Hanging Leg Raises
+                                        <span class="exercise-sets">4×15</span>
+                                    </div>
+                                    <div class="exercise-details">Hang from pull-up bar. Raise knees to chest, control negative.</div>
+                                    <div class="exercise-tips">Avoid swinging, engage entire core for stability.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Russian Twists
+                                        <span class="exercise-sets">3×30</span>
+                                    </div>
+                                    <div class="exercise-details">Seated, 45-degree lean. Rotate medicine ball side to side.</div>
+                                    <div class="exercise-tips">Keep feet elevated for advanced version.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Plank Variations
+                                        <span class="exercise-sets">3×60s</span>
+                                    </div>
+                                    <div class="exercise-details">Standard plank, side plank (30s each side), forearm plank.</div>
+                                    <div class="exercise-tips">Engage glutes, maintain straight line from head to heels.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Core Finisher</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Ab Wheel Rollouts</span>
+                                    <span class="cardio-time">3×12</span>
+                                </div>
+                                <div class="cardio-instructions">Kneeling, roll out as far as possible while maintaining core tension.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tuesday: Lower Abs Focus -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Tuesday</span>
+                                <span class="muscle-focus">Lower Abs</span>
+                                <span class="intensity-level">Level 4</span>
+                            </div>
+                            <div class="duration">45 MIN</div>
+                        </div>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Hip Mobility
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Leg swings, hip circles, pigeon pose, butterfly stretch.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Core Activation
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Bird-dogs, dead bugs, hollow body holds.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-title">Lower Abs Protocol (30 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Reverse Crunches
+                                        <span class="exercise-sets">4×20</span>
+                                    </div>
+                                    <div class="exercise-details">Lie flat, lift hips off floor using lower abs. No momentum.</div>
+                                    <div class="exercise-tips">Focus on pelvis curling toward ribs.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Flutter Kicks
+                                        <span class="exercise-sets">4×30s</span>
+                                    </div>
+                                    <div class="exercise-details">Lie flat, legs straight. Alternate small, controlled kicks.</div>
+                                    <div class="exercise-tips">Keep lower back pressed into floor, core engaged.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Leg Raises
+                                        <span class="exercise-sets">4×15</span>
+                                    </div>
+                                    <div class="exercise-details">Lie on back, legs straight. Raise to 90 degrees, controlled descent.</div>
+                                    <div class="exercise-tips">Don't let feet touch floor between reps for constant tension.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Scissor Kicks
+                                        <span class="exercise-sets">3×30s</span>
+                                    </div>
+                                    <div class="exercise-details">Legs straight, alternate crossing them in scissor motion.</div>
+                                    <div class="exercise-tips">Keep movements controlled, no swinging.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Mountain Climbers
+                                        <span class="exercise-sets">3×45s</span>
+                                    </div>
+                                    <div class="exercise-details">High plank position, drive knees toward chest alternately.</div>
+                                    <div class="exercise-tips">Maintain stable plank position throughout.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Core Finisher</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Hollow Body Hold</span>
+                                    <span class="cardio-time">3×45s</span>
+                                </div>
+                                <div class="cardio-instructions">Lie on back, lift shoulders and legs off floor, maintain banana shape.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wednesday: Obliques Focus -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Wednesday</span>
+                                <span class="muscle-focus">Obliques</span>
+                                <span class="intensity-level">Level 4</span>
+                            </div>
+                            <div class="duration">45 MIN</div>
+                        </div>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Thoracic Rotation
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Seated twists, standing rotations, cat-camel with rotation.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Side Plank Activation
+                                        <span class="exercise-sets">5 min</span>
+                                    </div>
+                                    <div class="exercise-details">Side planks (20s each side), bird-dogs with rotation.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-title">Obliques Protocol (30 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Cable Wood Chops
+                                        <span class="exercise-sets">4×15 each side</span>
+                                    </div>
+                                    <div class="exercise-details">High to low rotation. Engage obliques, rotate through core.</div>
+                                    <div class="exercise-tips">Keep arms straight, power comes from torso rotation.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Side Bends
+                                        <span class="exercise-sets">4×20 each side</span>
+                                    </div>
+                                    <div class="exercise-details">Dumbbell in one hand, bend laterally. Return to neutral.</div>
+                                    <div class="exercise-tips">Don't lean forward or backward, strict side bend only.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Russian Twists (Weighted)
+                                        <span class="exercise-sets">4×25</span>
+                                    </div>
+                                    <div class="exercise-details">Medicine ball or plate. Feet elevated for advanced.</div>
+                                    <div class="exercise-tips">Twist fully, touch weight to floor on each side.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Side Plank Dips
+                                        <span class="exercise-sets">3×15 each side</span>
+                                    </div>
+                                    <div class="exercise-details">Side plank position, lower hip toward floor, raise back up.</div>
+                                    <div class="exercise-tips">Keep body straight, don't sag at hips.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Bicycle Crunches
+                                        <span class="exercise-sets">3×30</span>
+                                    </div>
+                                    <div class="exercise-details">Alternate elbow to opposite knee, full extension on non-working leg.</div>
+                                    <div class="exercise-tips">Focus on rotation, not speed.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Core Finisher</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Plank with Hip Dips</span>
+                                    <span class="cardio-time">3×20 each side</span>
+                                </div>
+                                <div class="cardio-instructions">Forearm plank, rotate hips side to side touching floor.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Thursday: Full Core Circuit -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Thursday</span>
+                                <span class="muscle-focus">Core Circuit</span>
+                                <span class="intensity-level">Level 5</span>
+                            </div>
+                            <div class="duration">50 MIN</div>
+                        </div>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dynamic Core Flow
+                                        <span class="exercise-sets">10 min</span>
+                                    </div>
+                                    <div class="exercise-details">Cat-cow, bird-dog, dead bug, plank to downward dog flow.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-title">Core Circuit (35 min - 4 Rounds)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Plank Complex
+                                        <span class="exercise-sets">60s</span>
+                                    </div>
+                                    <div class="exercise-details">30s forearm plank, 15s each side side plank.</div>
+                                    <div class="exercise-tips">Maintain perfect form, engage glutes.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">V-Ups
+                                        <span class="exercise-sets">15 reps</span>
+                                    </div>
+                                    <div class="exercise-details">Lie flat, simultaneously raise torso and legs to form V.</div>
+                                    <div class="exercise-tips">Touch hands to feet at top, controlled negative.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Cable Crunches
+                                        <span class="exercise-sets">20 reps</span>
+                                    </div>
+                                    <div class="exercise-details">Heavy weight, focus on peak contraction.</div>
+                                    <div class="exercise-tips">Don't use momentum, pure core contraction.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Hanging Windshield Wipers
+                                        <span class="exercise-sets">12 reps</span>
+                                    </div>
+                                    <div class="exercise-details">Hanging from bar, legs straight, rotate side to side.</div>
+                                    <div class="exercise-tips">Advanced move - control rotation, don't swing.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Medicine Ball Slams
+                                        <span class="exercise-sets">15 reps</span>
+                                    </div>
+                                    <div class="exercise-details">Overhead slam, engage entire core in explosive movement.</div>
+                                    <div class="exercise-tips">Power from core, catch on bounce.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Leg Raises
+                                        <span class="exercise-sets">20 reps</span>
+                                    </div>
+                                    <div class="exercise-details">On bench or floor, strict form, no momentum.</div>
+                                    <div class="exercise-tips">Lower back pressed into surface, slow negative.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Circuit Protocol</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Rest Between Rounds</span>
+                                    <span class="cardio-time">90s</span>
+                                </div>
+                                <div class="cardio-instructions">Complete all exercises back-to-back, then rest 90 seconds between rounds.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Friday: Core Strength & Stability -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Friday</span>
+                                <span class="muscle-focus">Core Strength</span>
+                                <span class="intensity-level">Level 4</span>
+                            </div>
+                            <div class="duration">45 MIN</div>
+                        </div>
+                        <div class="session-content">
+                            <div class="section-title">Warm-up (10 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Core Stability Activation
+                                        <span class="exercise-sets">10 min</span>
+                                    </div>
+                                    <div class="exercise-details">Dead bugs, bird-dogs, plank variations, glute bridges.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="section-title">Core Strength Protocol (30 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Ab Wheel Rollouts
+                                        <span class="exercise-sets">4×12</span>
+                                    </div>
+                                    <div class="exercise-details">Kneeling, roll out as far as possible while maintaining tension.</div>
+                                    <div class="exercise-tips">Advanced: from standing position.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dragon Flags
+                                        <span class="exercise-sets">3×8</span>
+                                    </div>
+                                    <div class="exercise-details">Lie on bench, grip behind head, raise entire body as one unit.</div>
+                                    <div class="exercise-tips">Advanced move - maintain straight body line.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Weighted Cable Crunches
+                                        <span class="exercise-sets">4×15</span>
+                                    </div>
+                                    <div class="exercise-details">Heavy weight, focus on maximum contraction.</div>
+                                    <div class="exercise-tips">Hold contraction for 2 seconds at peak.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">L-Sit Holds
+                                        <span class="exercise-sets">4×20s</span>
+                                    </div>
+                                    <div class="exercise-details">Parallel bars or floor, lift legs to form L shape.</div>
+                                    <div class="exercise-tips">Keep legs straight, core engaged, don't round back.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Pallof Press
+                                        <span class="exercise-sets">3×15 each side</span>
+                                    </div>
+                                    <div class="exercise-details">Cable at chest height, resist rotation while pressing arms straight.</div>
+                                    <div class="exercise-tips">Anti-rotation exercise for core stability.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Core Finisher</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Plank Complex</span>
+                                    <span class="cardio-time">3×60s</span>
+                                </div>
+                                <div class="cardio-instructions">30s standard plank, 15s each side side plank with rotation.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Saturday: Active Recovery & Mobility -->
+                    <div class="day-card">
+                        <div class="day-header">
+                            <div>
+                                <span class="day-name">Saturday</span>
+                                <span class="muscle-focus">Core Recovery</span>
+                                <span class="intensity-level">Level 2</span>
+                            </div>
+                            <div class="duration">40 MIN</div>
+                        </div>
+                        <div class="session-content">
+                            <div class="section-title">Recovery Protocol (40 min)</div>
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Foam Rolling Core
+                                        <span class="exercise-sets">10 min</span>
+                                    </div>
+                                    <div class="exercise-details">Focus on hip flexors, lower back, obliques, thoracic spine.</div>
+                                    <div class="exercise-tips">Move slowly, pause on tight spots for 30-45 seconds.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Static Stretching
+                                        <span class="exercise-sets">15 min</span>
+                                    </div>
+                                    <div class="exercise-details">Cobra stretch, child's pose, seated forward fold, butterfly stretch.</div>
+                                    <div class="exercise-tips">Hold each stretch 45-60 seconds, breathe deeply.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Core Mobility Drills
+                                        <span class="exercise-sets">10 min</span>
+                                    </div>
+                                    <div class="exercise-details">Cat-cow flows, thread the needle, spinal rotations.</div>
+                                    <div class="exercise-tips">Focus on quality of movement, not intensity.</div>
+                                </div>
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Light Walking or Swimming
+                                        <span class="exercise-sets">30 min</span>
+                                    </div>
+                                    <div class="exercise-details">Low intensity activity to promote blood flow and recovery.</div>
+                                    <div class="exercise-tips">Heart rate below 60% max, conversational pace.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cardio-section">
+                                <div class="cardio-title">Recovery Focus</div>
+                                <div class="cardio-details">
+                                    <span class="cardio-type">Hydration & Nutrition</span>
+                                    <span class="cardio-time">DAILY</span>
+                                </div>
+                                <div class="cardio-instructions">Drink 3-4L water, focus on anti-inflammatory foods (berries, fatty fish, leafy greens).</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nutrition Guide Tab -->
+            <div id="nutrition-tab" class="tab-content">
+                <div class="session-content">
+                    <div class="section-title">Professional Nutrition Blueprint</div>
+                    <p style="color: #adb5bd; margin-bottom: 25px; line-height: 1.6;">Designed by Elite Training System nutritionists for optimal performance, muscle growth, and fat loss. Follow this blueprint for 6-pack abs and maximum results.</p>
+                    
+                    <!-- Breakfast Section -->
+                    <div class="meal-card">
+                        <div class="meal-time">Breakfast (7:00-8:00 AM)</div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 1: High-Protein Scramble</div>
+                            <div class="exercise-details">3 whole eggs + 3 egg whites, 1 cup spinach, ½ avocado, 1 slice whole grain toast</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 35g</div>
+                                <div class="macro-item">Carbs: 25g</div>
+                                <div class="macro-item">Fat: 25g</div>
+                                <div class="macro-item">Calories: 420</div>
+                            </div>
+                        </div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 2: Protein Oatmeal</div>
+                            <div class="exercise-details">½ cup oats, 1 scoop whey protein, 1 tbsp almond butter, ½ cup mixed berries</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 32g</div>
+                                <div class="macro-item">Carbs: 45g</div>
+                                <div class="macro-item">Fat: 12g</div>
+                                <div class="macro-item">Calories: 410</div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">Goal: High protein to start metabolism, moderate carbs for energy, healthy fats for hormone function.</div>
+                    </div>
+                    
+                    <!-- Mid-Morning Snack -->
+                    <div class="meal-card">
+                        <div class="meal-time">Mid-Morning Snack (10:30-11:00 AM)</div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 1: Greek Yogurt Bowl</div>
+                            <div class="exercise-details">1 cup Greek yogurt, ¼ cup granola, 1 tbsp chia seeds, ½ apple sliced</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 25g</div>
+                                <div class="macro-item">Carbs: 30g</div>
+                                <div class="macro-item">Fat: 8g</div>
+                                <div class="macro-item">Calories: 280</div>
+                            </div>
+                        </div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 2: Protein Shake</div>
+                            <div class="exercise-details">1 scoop protein powder, 1 cup almond milk, 1 tbsp flax seeds, handful of spinach</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 28g</div>
+                                <div class="macro-item">Carbs: 10g</div>
+                                <div class="macro-item">Fat: 7g</div>
+                                <div class="macro-item">Calories: 220</div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">Goal: Maintain protein synthesis, stabilize blood sugar, prevent overeating at lunch.</div>
+                    </div>
+                    
+                    <!-- Lunch Section -->
+                    <div class="meal-card">
+                        <div class="meal-time">Lunch (12:30-1:30 PM)</div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 1: Grilled Chicken Salad</div>
+                            <div class="exercise-details">6 oz grilled chicken breast, mixed greens, ½ cup quinoa, assorted vegetables, olive oil dressing</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 40g</div>
+                                <div class="macro-item">Carbs: 35g</div>
+                                <div class="macro-item">Fat: 15g</div>
+                                <div class="macro-item">Calories: 450</div>
+                            </div>
+                        </div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 2: Salmon & Sweet Potato</div>
+                            <div class="exercise-details">6 oz grilled salmon, 1 medium sweet potato, 2 cups steamed broccoli, lemon wedge</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 38g</div>
+                                <div class="macro-item">Carbs: 40g</div>
+                                <div class="macro-item">Fat: 18g</div>
+                                <div class="macro-item">Calories: 480</div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">Goal: Balanced macro profile, high volume for satiety, complex carbs for sustained energy.</div>
+                    </div>
+                    
+                    <!-- Pre-Workout Snack -->
+                    <div class="meal-card">
+                        <div class="meal-time">Pre-Workout (3:30-4:00 PM)</div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 1: Banana & Almonds</div>
+                            <div class="exercise-details">1 medium banana, 1 oz almonds (about 23), ½ scoop protein powder in water</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 20g</div>
+                                <div class="macro-item">Carbs: 35g</div>
+                                <div class="macro-item">Fat: 14g</div>
+                                <div class="macro-item">Calories: 340</div>
+                            </div>
+                        </div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 2: Rice Cakes & PB</div>
+                            <div class="exercise-details">2 rice cakes, 2 tbsp natural peanut butter, ½ scoop protein in water</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 22g</div>
+                                <div class="macro-item">Carbs: 25g</div>
+                                <div class="macro-item">Fat: 16g</div>
+                                <div class="macro-item">Calories: 320</div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">Goal: Easily digestible carbs for workout energy, moderate protein, minimal fat for quick digestion.</div>
+                    </div>
+                    
+                    <!-- Post-Workout Meal -->
+                    <div class="meal-card">
+                        <div class="meal-time">Post-Workout (Within 60 min of workout)</div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 1: Recovery Shake</div>
+                            <div class="exercise-details">2 scoops whey protein, 1 banana, ½ cup oats, 1 tbsp honey, water/almond milk</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 50g</div>
+                                <div class="macro-item">Carbs: 65g</div>
+                                <div class="macro-item">Fat: 5g</div>
+                                <div class="macro-item">Calories: 520</div>
+                            </div>
+                        </div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 2: Chicken & Rice Bowl</div>
+                            <div class="exercise-details">6 oz chicken breast, 1 cup white rice, mixed vegetables, low-sodium soy sauce</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 45g</div>
+                                <div class="macro-item">Carbs: 60g</div>
+                                <div class="macro-item">Fat: 8g</div>
+                                <div class="macro-item">Calories: 500</div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">Goal: Maximum protein for muscle repair, high glycemic carbs to replenish glycogen, minimal fat for optimal nutrient absorption.</div>
+                    </div>
+                    
+                    <!-- Dinner Section -->
+                    <div class="meal-card">
+                        <div class="meal-time">Dinner (7:00-8:00 PM)</div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 1: Lean Beef & Veggies</div>
+                            <div class="exercise-details">6 oz lean ground beef (93/7), 2 cups mixed vegetables, ½ avocado, salsa</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 42g</div>
+                                <div class="macro-item">Carbs: 20g</div>
+                                <div class="macro-item">Fat: 22g</div>
+                                <div class="macro-item">Calories: 460</div>
+                            </div>
+                        </div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 2: Turkey Stir Fry</div>
+                            <div class="exercise-details">6 oz ground turkey, stir-fry vegetables, 1 cup cauliflower rice, low-sodium teriyaki</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 40g</div>
+                                <div class="macro-item">Carbs: 25g</div>
+                                <div class="macro-item">Fat: 15g</div>
+                                <div class="macro-item">Calories: 420</div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">Goal: High protein for overnight recovery, lower carbs at night, healthy fats for hormone regulation.</div>
+                    </div>
+                    
+                    <!-- Evening Snack -->
+                    <div class="meal-card">
+                        <div class="meal-time">Evening Snack (9:30-10:00 PM)</div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 1: Casein Pudding</div>
+                            <div class="exercise-details">1 scoop casein protein, ½ cup Greek yogurt, 1 tbsp cocoa powder, stevia to taste</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 30g</div>
+                                <div class="macro-item">Carbs: 12g</div>
+                                <div class="macro-item">Fat: 4g</div>
+                                <div class="macro-item">Calories: 200</div>
+                            </div>
+                        </div>
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 2: Cottage Cheese Bowl</div>
+                            <div class="exercise-details">1 cup cottage cheese, 1 tbsp almond butter, cinnamon, ¼ cup berries</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 28g</div>
+                                <div class="macro-item">Carbs: 15g</div>
+                                <div class="macro-item">Fat: 10g</div>
+                                <div class="macro-item">Calories: 240</div>
+                            </div>
+                        </div>
+                        <div class="exercise-tips">Goal: Slow-digesting protein for overnight muscle repair, minimal carbs/fats for easy digestion before sleep.</div>
+                    </div>
+                    
+                    <!-- Daily Totals -->
+                    <div class="cardio-section">
+                        <div class="cardio-title">Daily Nutritional Totals</div>
+                        <div class="cardio-details">
+                            <span class="cardio-type">Approximate Daily Intake</span>
+                            <span class="cardio-time">Varies by Option</span>
+                        </div>
+                        <div class="cardio-instructions">
+                            <strong>Protein:</strong> 200-240g • <strong>Carbs:</strong> 180-250g • <strong>Fat:</strong> 60-80g • <strong>Calories:</strong> 2200-2800<br>
+                            <strong>Water:</strong> 3-4 liters minimum • <strong>Supplements:</strong> Creatine 5g, Vitamin D 2000-5000 IU, Omega-3 2g<br>
+                            <strong>Adjustments:</strong> Reduce carbs by 30-50g on rest days. Increase by 50-100g on intense training days.
+                        </div>
+                    </div>
+                    
+                    <!-- Strategic Cheat Meal Section -->
+                    <div class="fastfood-section">
+                        <div class="fastfood-title">Strategic "Refuel" Day (Once Per Week)</div>
+                        <p style="color: #adb5bd; margin-bottom: 20px; line-height: 1.6;">A planned, controlled "refuel" meal once per week can boost metabolism, satisfy cravings, and improve diet adherence. Follow these professional guidelines:</p>
+                        
+                        <div class="fastfood-option">
+                            <div class="fastfood-name">Burger & Fries Protocol</div>
+                            <div class="exercise-details">Choose: Single patty burger with cheese, small fries, water or diet drink</div>
+                            <div class="fastfood-tips">• Skip the bun or use lettuce wrap • Load up on veggies • Share fries or get small • Avoid sugary drinks and milkshakes</div>
+                        </div>
+                        
+                        <div class="fastfood-option">
+                            <div class="fastfood-name">Pizza Strategy</div>
+                            <div class="exercise-details">Choose: Thin crust, vegetable toppings, light cheese, 2-3 slices maximum</div>
+                            <div class="fastfood-tips">• Avoid stuffed crust and extra cheese • Load up on vegetable toppings • Pair with side salad • Stop at 2-3 slices maximum</div>
+                        </div>
+                        
+                        <div class="fastfood-option">
+                            <div class="fastfood-name">Mexican Food Approach</div>
+                            <div class="exercise-details">Choose: Burrito bowl with lean protein, skip the tortilla, reasonable portion</div>
+                            <div class="fastfood-tips">• Choose burrito bowl over burrito • Load up on vegetables and salsa • Skip sour cream and guacamole • Moderate cheese portion</div>
+                        </div>
+                        
+                        <div class="fastfood-option">
+                            <div class="fastfood-name">Asian Food Selection</div>
+                            <div class="exercise-details">Choose: Stir-fry with extra vegetables, lean protein, request sauce on side</div>
+                            <div class="fastfood-tips">• Choose steamed over fried • Request sauce on the side • Load up on vegetables • Moderate rice portion (½ cup)</div>
+                        </div>
+                        
+                        <div class="cardio-instructions" style="margin-top: 20px; color: #ff8500; font-weight: 600;">
+                            <strong>Professional Guidelines:</strong> 1) Eat maintenance calories this day only • 2) Time cheat meal after workout • 3) Hydrate well • 4) Return to normal diet next meal • 5) Never make it a cheat "day" - only one meal
+                        </div>
+                    </div>
+                    
+                    <div class="workout-tips">
+                        <div class="tips-title">Nutrition Principles for 6-Pack Abs</div>
+                        <div class="tips-grid">
+                            <div class="tip-item">
+                                <div class="tip-icon">⚖️</div>
+                                <div class="tip-text"><strong>Calorie Deficit:</strong> Abs are made in the kitchen. Maintain 300-500 calorie deficit for fat loss while preserving muscle.</div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">🥩</div>
+                                <div class="tip-text"><strong>High Protein:</strong> 1g per pound of bodyweight minimum. Preserves muscle during deficit, increases satiety.</div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">💧</div>
+                                <div class="tip-text"><strong>Hydration:</strong> 3-4L water daily. Reduces water retention, improves metabolism, suppresses appetite.</div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">🥦</div>
+                                <div class="tip-text"><strong>Fiber Focus:</strong> 30-40g daily from vegetables, fruits, whole grains. Improves digestion, increases satiety.</div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">⏰</div>
+                                <div class="tip-text"><strong>Meal Timing:</strong> 4-6 meals daily, protein every 3-4 hours. Maintains stable blood sugar, constant protein synthesis.</div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">🧂</div>
+                                <div class="tip-text"><strong>Sodium Management:</strong> Limit processed foods. Reduces subcutaneous water retention for better definition.</div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">🔄</div>
+                                <div class="tip-text"><strong>Carb Cycling:</strong> Higher carbs on training days, lower on rest days. Optimizes performance and fat loss.</div>
+                            </div>
+                            <div class="tip-item">
+                                <div class="tip-icon">😴</div>
+                                <div class="tip-text"><strong>Sleep Quality:</strong> 7-9 hours nightly. Regulates hunger hormones (ghrelin/leptin), reduces cortisol.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- Program Tips Section -->
@@ -1446,44 +2296,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="workout-tips" id="weightloss-tips" style="display: none;">
-            <div class="tips-title">Weight Loss Cardio Principles</div>
-            <div class="tips-grid">
-                <div class="tip-item">
-                    <div class="tip-icon">🔥</div>
-                    <div class="tip-text"><strong>Afterburn Effect (EPOC):</strong> HIIT creates 24-48 hour metabolic boost. Train hard to maximize calorie burn post-workout.</div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon">🔄</div>
-                    <div class="tip-text"><strong>Interval Variation:</strong> Constantly change interval length and intensity to prevent adaptation and maximize fat loss.</div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon">❤️</div>
-                    <div class="tip-text"><strong>Heart Rate Zones:</strong> Train in Zone 4-5 for HIIT, Zone 3 for endurance. Use heart rate monitor for accuracy.</div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon">⚡</div>
-                    <div class="tip-text"><strong>Power Output:</strong> Focus on maintaining power throughout workout, not just completing time. Quality over quantity.</div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon">🍽️</div>
-                    <div class="tip-text"><strong>Fasted Training:</strong> Consider fasted cardio in morning (if medically appropriate) to enhance fat oxidation.</div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon">💧</div>
-                    <div class="tip-text"><strong>Hydration Strategy:</strong> Drink 500ml water 30min pre-workout, sip during, 1L post-workout with electrolytes.</div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon">📊</div>
-                    <div class="tip-text"><strong>Progress Tracking:</strong> Log distance, time, heart rate, RPE. Increase intensity weekly by 5-10%.</div>
-                </div>
-                <div class="tip-item">
-                    <div class="tip-icon">🛌</div>
-                    <div class="tip-text"><strong>Sleep & Recovery:</strong> 7-9 hours quality sleep essential for hormone regulation and recovery from intense cardio.</div>
-                </div>
-            </div>
-        </div>
         
         <footer>
             <p><span class="footer-highlight">ELITE TRAINING SYSTEM</span> • Professional Programs for Maximum Results</p>
@@ -1518,14 +2330,8 @@
                 // Add active class to the clicked button
                 document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
                 
-                // Show/hide the appropriate tips section
-                if (tabId === 'strength') {
-                    strengthTips.style.display = 'block';
-                    weightlossTips.style.display = 'none';
-                } else {
-                    strengthTips.style.display = 'none';
-                    weightlossTips.style.display = 'block';
-                }
+                // Show only the strength tips by default
+                strengthTips.style.display = 'block';
                 
                 // Smooth scroll to top of content
                 document.querySelector('.tab-container').scrollIntoView({
@@ -1546,6 +2352,10 @@
                 const hash = window.location.hash.substring(1);
                 if (hash === 'weightloss' || hash === 'cardio') {
                     switchTab('weightloss');
+                } else if (hash === 'abs') {
+                    switchTab('abs');
+                } else if (hash === 'nutrition') {
+                    switchTab('nutrition');
                 } else {
                     // Default to strength training
                     switchTab('strength');
