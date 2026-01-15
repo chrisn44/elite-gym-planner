@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏋️ Elite Training System PRO</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0c0c0c">
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>">
     
-    <!-- iOS PWA meta tags for better home screen experience -->
+    <!-- iOS PWA meta tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Elite Training">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️</text></svg>">
     
     <!-- Android PWA meta tags -->
-    <meta name="theme-color" content="#0c0c0c">
     <meta name="mobile-web-app-capable" content="yes">
     
     <style>
@@ -160,6 +164,7 @@
             display: block;
         }
         
+        /* Schedule Container */
         .schedule-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -346,6 +351,7 @@
             border-top: 1px dashed rgba(255, 133, 0, 0.3);
         }
         
+        /* Cardio Section */
         .cardio-section {
             background: rgba(20, 40, 60, 0.7);
             border-radius: 10px;
@@ -579,6 +585,347 @@
             font-weight: 600;
         }
         
+        /* NEW FEATURES STYLES */
+        
+        /* Rest Timer Styles */
+        .rest-timer-container {
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 180, 216, 0.3);
+        }
+        
+        .rest-timer-display {
+            font-size: 5rem;
+            font-weight: 900;
+            text-align: center;
+            margin: 20px 0;
+            color: #00b4d8;
+            text-shadow: 0 0 20px rgba(0, 180, 216, 0.5);
+        }
+        
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .timer-btn {
+            background: linear-gradient(45deg, #ff4700, #ff8500);
+            color: #0c0c0c;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+        
+        .timer-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 71, 0, 0.3);
+        }
+        
+        .timer-btn.secondary {
+            background: linear-gradient(45deg, #00b4d8, #0096c7);
+        }
+        
+        .timer-presets {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .preset-btn {
+            background: rgba(40, 40, 40, 0.7);
+            color: #adb5bd;
+            border: 2px solid rgba(255, 71, 0, 0.3);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .preset-btn:hover {
+            background: rgba(255, 71, 0, 0.2);
+            color: #f8f9fa;
+        }
+        
+        /* Workout History Styles */
+        .history-container {
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 180, 216, 0.3);
+        }
+        
+        .history-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .history-stat-card {
+            background: rgba(40, 40, 40, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #ff4700;
+        }
+        
+        .history-stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #00b4d8;
+            margin-bottom: 5px;
+        }
+        
+        .history-stat-label {
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        .workout-log {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        .workout-log-item {
+            background: rgba(40, 40, 40, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #00b894;
+        }
+        
+        .workout-log-date {
+            color: #ff8500;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .workout-log-details {
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* AI Generator Styles */
+        .ai-generator-container {
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 180, 216, 0.3);
+        }
+        
+        .ai-form-group {
+            margin-bottom: 20px;
+        }
+        
+        .ai-form-label {
+            color: #00b4d8;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .ai-form-select, .ai-form-input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(40, 40, 40, 0.7);
+            border: 2px solid rgba(255, 71, 0, 0.3);
+            border-radius: 8px;
+            color: #f8f9fa;
+            font-size: 1rem;
+        }
+        
+        .ai-form-select:focus, .ai-form-input:focus {
+            outline: none;
+            border-color: #ff4700;
+        }
+        
+        .ai-generated-workout {
+            background: rgba(40, 40, 40, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .ai-workout-title {
+            color: #ff8500;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        /* Advanced Programs Styles */
+        .advanced-program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .advanced-program-card {
+            background: rgba(30, 30, 30, 0.85);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 71, 0, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .advanced-program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 71, 0, 0.2);
+            border-color: rgba(255, 71, 0, 0.4);
+        }
+        
+        .advanced-program-header {
+            background: linear-gradient(45deg, #ff4700, #ff8500);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .advanced-program-name {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0c0c0c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .advanced-program-level {
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 700;
+            margin-top: 5px;
+        }
+        
+        .advanced-program-content {
+            padding: 20px;
+        }
+        
+        .program-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .feature-icon {
+            color: #00b4d8;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Progress Tracker Updates */
+        .progress-tracker {
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .tracker-title {
+            color: #00b4d8;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .tracker-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #ff4700;
+            background: linear-gradient(45deg, #ff4700, #ff8500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            color: #adb5bd;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .workout-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .control-btn {
+            background: rgba(40, 40, 40, 0.7);
+            color: #adb5bd;
+            border: 2px solid rgba(255, 71, 0, 0.3);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .control-btn:hover {
+            background: rgba(255, 71, 0, 0.2);
+            color: #f8f9fa;
+        }
+        
+        .control-btn.active {
+            background: linear-gradient(45deg, #ff4700, #ff8500);
+            color: #0c0c0c;
+        }
+        
+        /* Notification indicator */
+        .notification-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff4700, #ff8500);
+            color: #0c0c0c;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(255, 71, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        .notification-icon {
+            font-size: 1.2rem;
+        }
+        
         /* Responsive Design */
         @media (min-width: 768px) {
             .schedule-container {
@@ -605,6 +952,10 @@
                 min-width: 160px;
                 padding: 12px 20px;
                 font-size: 1rem;
+            }
+            
+            .history-stats {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
         
@@ -736,7 +1087,10 @@
                     <div class="stat-label">Calories Burned</div>
                 </div>
                 <div class="stat-item">
-                    <button onclick="resetWorkout()" style="background: #ff4700; color: white; border: none; padding: 8px 20px; border-radius: 20px; font-weight: 700; cursor: pointer; margin-top: 5px;">Reset</button>
+                    <div class="workout-controls">
+                        <button class="control-btn" id="pauseBtn" onclick="toggleWorkoutPause()">⏸️ Pause</button>
+                        <button class="control-btn" id="resetBtn" onclick="resetWorkout()">🔄 Reset</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -766,11 +1120,27 @@
                     <span class="tab-icon">🍎</span>
                     Nutrition PRO
                 </button>
+                <button class="tab-button" data-tab="resttimer">
+                    <span class="tab-icon">⏱️</span>
+                    Rest Timer
+                </button>
+                <button class="tab-button" data-tab="history">
+                    <span class="tab-icon">📊</span>
+                    History & Analytics
+                </button>
+                <button class="tab-button" data-tab="aigenerator">
+                    <span class="tab-icon">🤖</span>
+                    AI Generator
+                </button>
+                <button class="tab-button" data-tab="advanced">
+                    <span class="tab-icon">🚀</span>
+                    Advanced Programs
+                </button>
             </div>
             
             <!-- Strength Training Schedule Tab -->
             <div id="strength-tab" class="tab-content active">
-                <!-- All existing strength training content remains exactly the same -->
+                <!-- Existing strength training content remains exactly the same -->
                 <div class="schedule-container">
                     <!-- Monday: Chest & Triceps -->
                     <div class="day-card">
@@ -1310,7 +1680,7 @@
             
             <!-- Weight Loss Cardio Schedule Tab -->
             <div id="weightloss-tab" class="tab-content">
-                <!-- All existing weight loss content remains exactly the same -->
+                <!-- Existing weight loss content remains exactly the same -->
                 <div class="schedule-container">
                     <!-- Monday: HIIT Intensive -->
                     <div class="day-card">
@@ -1784,7 +2154,7 @@
             
             <!-- Abs & Core Schedule Tab -->
             <div id="abs-tab" class="tab-content">
-                <!-- All existing abs content remains exactly the same -->
+                <!-- Existing abs content remains exactly the same -->
                 <div class="schedule-container">
                     <!-- Monday: Core Power & Strength -->
                     <div class="day-card">
@@ -2222,7 +2592,7 @@
                                 <div class="exercise-card">
                                     <div class="exercise-name">Suitcase Carry
                                         <span class="exercise-sets">4×40m/side</span>
-                                </div>
+                                    </div>
                                     <div class="exercise-details">Heavy dumbbell or kettlebell in one hand. Maintain upright posture.</div>
                                 </div>
                                 <div class="exercise-card">
@@ -2332,7 +2702,7 @@
             
             <!-- Nutrition Guide Tab -->
             <div id="nutrition-tab" class="tab-content">
-                <!-- All existing nutrition content remains exactly the same -->
+                <!-- Existing nutrition content remains exactly the same -->
                 <div class="session-content">
                     <div class="section-title">Professional Nutrition Blueprint</div>
                     <p style="color: #adb5bd; margin-bottom: 25px; line-height: 1.6;">Advanced nutrition strategies for muscle growth, fat loss, and performance. Includes budget-friendly options.</p>
@@ -2702,6 +3072,425 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- NEW FEATURE: Rest Timer Tab -->
+            <div id="resttimer-tab" class="tab-content">
+                <div class="rest-timer-container">
+                    <h2 class="tips-title">⏱️ Advanced Rest Timer</h2>
+                    <p style="color: #adb5bd; margin-bottom: 25px; line-height: 1.6;">Professional rest timer with pause/resume functionality. Perfect for tracking rest periods between sets.</p>
+                    
+                    <div class="rest-timer-display" id="restTimerDisplay">01:00</div>
+                    
+                    <div class="timer-controls">
+                        <button class="timer-btn" id="startRestTimer">▶️ Start</button>
+                        <button class="timer-btn secondary" id="pauseRestTimer">⏸️ Pause</button>
+                        <button class="timer-btn" id="resetRestTimer">🔄 Reset</button>
+                        <button class="timer-btn secondary" id="addMinute">+1 Min</button>
+                        <button class="timer-btn secondary" id="add30Seconds">+30 Sec</button>
+                    </div>
+                    
+                    <div class="timer-presets">
+                        <button class="preset-btn" data-seconds="30">30 Seconds</button>
+                        <button class="preset-btn" data-seconds="60">1 Minute</button>
+                        <button class="preset-btn" data-seconds="90">1:30 Minutes</button>
+                        <button class="preset-btn" data-seconds="120">2 Minutes</button>
+                        <button class="preset-btn" data-seconds="180">3 Minutes</button>
+                        <button class="preset-btn" data-seconds="300">5 Minutes</button>
+                    </div>
+                    
+                    <div style="margin-top: 30px; color: #adb5bd; font-size: 0.9rem;">
+                        <p><strong>Pro Tip:</strong> Use 60-90 seconds rest for hypertrophy, 2-3 minutes for strength, 3-5 minutes for maximal lifts.</p>
+                        <p>Timer will send browser notifications when complete if permissions are granted.</p>
+                    </div>
+                </div>
+                
+                <div class="workout-tips">
+                    <div class="tips-title">Rest Period Guidelines</div>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <div class="tip-icon">💪</div>
+                            <div class="tip-text"><strong>Strength Training:</strong> 2-5 minutes rest between heavy sets. Allows ATP replenishment for maximum strength.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">🏋️</div>
+                            <div class="tip-text"><strong>Hypertrophy:</strong> 60-90 seconds rest. Maintains metabolic stress for muscle growth.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">🔥</div>
+                            <div class="tip-text"><strong>Metabolic Conditioning:</strong> 30-45 seconds rest. Keeps heart rate elevated for calorie burn.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">⚡</div>
+                            <div class="tip-text"><strong>Power Training:</strong> 3-5 minutes rest. Full recovery between explosive movements.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NEW FEATURE: Workout History & Analytics Tab -->
+            <div id="history-tab" class="tab-content">
+                <div class="history-container">
+                    <h2 class="tips-title">📊 Workout History & Analytics</h2>
+                    <p style="color: #adb5bd; margin-bottom: 25px; line-height: 1.6;">Track your progress with detailed analytics and workout history.</p>
+                    
+                    <div class="history-stats">
+                        <div class="history-stat-card">
+                            <div class="history-stat-value" id="totalWorkouts">0</div>
+                            <div class="history-stat-label">Total Workouts</div>
+                        </div>
+                        <div class="history-stat-card">
+                            <div class="history-stat-value" id="totalTime">0h 0m</div>
+                            <div class="history-stat-label">Total Time</div>
+                        </div>
+                        <div class="history-stat-card">
+                            <div class="history-stat-value" id="totalCalories">0</div>
+                            <div class="history-stat-label">Total Calories</div>
+                        </div>
+                        <div class="history-stat-card">
+                            <div class="history-stat-value" id="avgDuration">0m</div>
+                            <div class="history-stat-label">Avg Duration</div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-title">Recent Workouts</div>
+                    <div class="workout-log" id="workoutLog">
+                        <!-- Workout history will be populated here -->
+                        <p style="color: #adb5bd; text-align: center; padding: 20px;">No workout history yet. Complete your first workout to see analytics!</p>
+                    </div>
+                    
+                    <div class="timer-controls" style="margin-top: 20px;">
+                        <button class="timer-btn" onclick="exportWorkoutHistory()">📤 Export Data</button>
+                        <button class="timer-btn secondary" onclick="clearWorkoutHistory()">🗑️ Clear History</button>
+                    </div>
+                </div>
+                
+                <div class="workout-tips">
+                    <div class="tips-title">Analytics Insights</div>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <div class="tip-icon">📈</div>
+                            <div class="tip-text"><strong>Consistency Tracking:</strong> Track workout frequency to ensure progressive overload and avoid plateaus.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">⏱️</div>
+                            <div class="tip-text"><strong>Time Management:</strong> Monitor workout duration to optimize efficiency and avoid overtraining.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">🔥</div>
+                            <div class="tip-text"><strong>Calorie Trends:</strong> Track energy expenditure to adjust nutrition for goals (bulking/cutting/maintenance).</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">📅</div>
+                            <div class="tip-text"><strong>Progress Visualization:</strong> See your fitness journey unfold with detailed historical data and trends.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NEW FEATURE: AI Workout Generator Tab -->
+            <div id="aigenerator-tab" class="tab-content">
+                <div class="ai-generator-container">
+                    <h2 class="tips-title">🤖 AI Workout Generator</h2>
+                    <p style="color: #adb5bd; margin-bottom: 25px; line-height: 1.6;">Generate custom workouts based on your goals, equipment, and experience level.</p>
+                    
+                    <div class="ai-form-group">
+                        <label class="ai-form-label">Primary Goal:</label>
+                        <select class="ai-form-select" id="goalSelect">
+                            <option value="strength">Strength & Power</option>
+                            <option value="hypertrophy">Muscle Hypertrophy</option>
+                            <option value="endurance">Muscle Endurance</option>
+                            <option value="fatloss">Fat Loss</option>
+                            <option value="performance">Athletic Performance</option>
+                        </select>
+                    </div>
+                    
+                    <div class="ai-form-group">
+                        <label class="ai-form-label">Experience Level:</label>
+                        <select class="ai-form-select" id="experienceSelect">
+                            <option value="beginner">Beginner (0-6 months)</option>
+                            <option value="intermediate">Intermediate (6-24 months)</option>
+                            <option value="advanced" selected>Advanced (2+ years)</option>
+                            <option value="elite">Elite (Competitive)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="ai-form-group">
+                        <label class="ai-form-label">Available Equipment:</label>
+                        <select class="ai-form-select" id="equipmentSelect">
+                            <option value="full">Full Gym Equipment</option>
+                            <option value="home">Home Gym (Basic)</option>
+                            <option value="bodyweight">Bodyweight Only</option>
+                            <option value="minimal">Minimal Equipment</option>
+                        </select>
+                    </div>
+                    
+                    <div class="ai-form-group">
+                        <label class="ai-form-label">Workout Duration (minutes):</label>
+                        <input type="number" class="ai-form-input" id="durationInput" min="30" max="180" value="60">
+                    </div>
+                    
+                    <div class="ai-form-group">
+                        <label class="ai-form-label">Muscle Focus:</label>
+                        <select class="ai-form-select" id="muscleSelect">
+                            <option value="fullbody">Full Body</option>
+                            <option value="upper">Upper Body</option>
+                            <option value="lower">Lower Body</option>
+                            <option value="push">Push (Chest/Shoulders/Triceps)</option>
+                            <option value="pull">Pull (Back/Biceps)</option>
+                            <option value="legs">Legs Focus</option>
+                        </select>
+                    </div>
+                    
+                    <button class="timer-btn" style="width: 100%; margin-top: 20px;" onclick="generateAIWorkout()">
+                        🤖 Generate Workout
+                    </button>
+                    
+                    <div class="ai-generated-workout" id="aiWorkoutResult">
+                        <!-- AI Generated workout will appear here -->
+                    </div>
+                </div>
+                
+                <div class="workout-tips">
+                    <div class="tips-title">AI Training Principles</div>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <div class="tip-icon">🧠</div>
+                            <div class="tip-text"><strong>Smart Programming:</strong> AI analyzes optimal exercise selection, volume, and intensity based on your inputs.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">⚡</div>
+                            <div class="tip-text"><strong>Adaptive Difficulty:</strong> Workouts automatically adjust based on experience level and available equipment.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">🎯</div>
+                            <div class="tip-text"><strong>Goal-Oriented:</strong> Every workout is tailored specifically to your primary fitness objective.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">🔄</div>
+                            <div class="tip-text"><strong>Progressive Variation:</strong> AI introduces strategic exercise variation to prevent adaptation and stimulate growth.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NEW FEATURE: Advanced Programs Tab -->
+            <div id="advanced-tab" class="tab-content">
+                <div class="advanced-program-grid">
+                    <!-- Program 1 -->
+                    <div class="advanced-program-card">
+                        <div class="advanced-program-header">
+                            <div class="advanced-program-name">Powerlifting Pro</div>
+                            <div class="advanced-program-level">Level: ELITE</div>
+                        </div>
+                        <div class="advanced-program-content">
+                            <div class="program-feature">
+                                <span class="feature-icon">💪</span>
+                                <span>Focus: Maximal Strength (Squat/Bench/Deadlift)</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">⏱️</span>
+                                <span>Duration: 12 Weeks</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">🔥</span>
+                                <span>Frequency: 4-5x/week</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">📈</span>
+                                <span>Goal: +5-10% 1RM on all lifts</span>
+                            </div>
+                            <div class="exercise-tips" style="margin-top: 15px;">
+                                Includes: Heavy singles, competition prep, peaking protocols
+                            </div>
+                            <button class="timer-btn" style="width: 100%; margin-top: 15px;" onclick="loadProgram('powerlifting')">
+                                Select Program
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 2 -->
+                    <div class="advanced-program-card">
+                        <div class="advanced-program-header">
+                            <div class="advanced-program-name">Bodybuilding Elite</div>
+                            <div class="advanced-program-level">Level: ADVANCED</div>
+                        </div>
+                        <div class="advanced-program-content">
+                            <div class="program-feature">
+                                <span class="feature-icon">🏋️</span>
+                                <span>Focus: Maximum Hypertrophy</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">⏱️</span>
+                                <span>Duration: 8 Weeks</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">🔥</span>
+                                <span>Frequency: 6x/week (Push/Pull/Legs)</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">📈</span>
+                                <span>Goal: Muscle Mass & Definition</span>
+                            </div>
+                            <div class="exercise-tips" style="margin-top: 15px;">
+                                Includes: High volume, drop sets, supersets, occlusion training
+                            </div>
+                            <button class="timer-btn" style="width: 100%; margin-top: 15px;" onclick="loadProgram('bodybuilding')">
+                                Select Program
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 3 -->
+                    <div class="advanced-program-card">
+                        <div class="advanced-program-header">
+                            <div class="advanced-program-name">Athlete Performance</div>
+                            <div class="advanced-program-level">Level: PRO</div>
+                        </div>
+                        <div class="advanced-program-content">
+                            <div class="program-feature">
+                                <span class="feature-icon">⚡</span>
+                                <span>Focus: Speed, Power, Agility</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">⏱️</span>
+                                <span>Duration: 6 Weeks</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">🔥</span>
+                                <span>Frequency: 5-6x/week</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">📈</span>
+                                <span>Goal: Athletic Performance</span>
+                            </div>
+                            <div class="exercise-tips" style="margin-top: 15px;">
+                                Includes: Plyometrics, sprints, agility drills, sport-specific training
+                            </div>
+                            <button class="timer-btn" style="width: 100%; margin-top: 15px;" onclick="loadProgram('athlete')">
+                                Select Program
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 4 -->
+                    <div class="advanced-program-card">
+                        <div class="advanced-program-header">
+                            <div class="advanced-program-name">Calisthenics Master</div>
+                            <div class="advanced-program-level">Level: ADVANCED</div>
+                        </div>
+                        <div class="advanced-program-content">
+                            <div class="program-feature">
+                                <span class="feature-icon">🤸</span>
+                                <span>Focus: Bodyweight Mastery</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">⏱️</span>
+                                <span>Duration: 10 Weeks</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">🔥</span>
+                                <span>Frequency: 5x/week</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">📈</span>
+                                <span>Goal: Advanced Calisthenics Skills</span>
+                            </div>
+                            <div class="exercise-tips" style="margin-top: 15px;">
+                                Includes: Planche, front lever, muscle-ups, human flag progressions
+                            </div>
+                            <button class="timer-btn" style="width: 100%; margin-top: 15px;" onclick="loadProgram('calisthenics')">
+                                Select Program
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 5 -->
+                    <div class="advanced-program-card">
+                        <div class="advanced-program-header">
+                            <div class="advanced-program-name">Strongman Pro</div>
+                            <div class="advanced-program-level">Level: ELITE</div>
+                        </div>
+                        <div class="advanced-program-content">
+                            <div class="program-feature">
+                                <span class="feature-icon">🏋️‍♂️</span>
+                                <span>Focus: Strongman Events</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">⏱️</span>
+                                <span>Duration: 8 Weeks</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">🔥</span>
+                                <span>Frequency: 4x/week</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">📈</span>
+                                <span>Goal: Event Performance</span>
+                            </div>
+                            <div class="exercise-tips" style="margin-top: 15px;">
+                                Includes: Atlas stones, yoke walks, log press, farmer's walks
+                            </div>
+                            <button class="timer-btn" style="width: 100%; margin-top: 15px;" onclick="loadProgram('strongman')">
+                                Select Program
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 6 -->
+                    <div class="advanced-program-card">
+                        <div class="advanced-program-header">
+                            <div class="advanced-program-name">Hybrid Athlete</div>
+                            <div class="advanced-program-level">Level: PRO</div>
+                        </div>
+                        <div class="advanced-program-content">
+                            <div class="program-feature">
+                                <span class="feature-icon">🔀</span>
+                                <span>Focus: Strength + Endurance</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">⏱️</span>
+                                <span>Duration: 12 Weeks</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">🔥</span>
+                                <span>Frequency: 6-7x/week</span>
+                            </div>
+                            <div class="program-feature">
+                                <span class="feature-icon">📈</span>
+                                <span>Goal: Complete Athleticism</span>
+                            </div>
+                            <div class="exercise-tips" style="margin-top: 15px;">
+                                Includes: Concurrent training, recovery optimization, periodization
+                            </div>
+                            <button class="timer-btn" style="width: 100%; margin-top: 15px;" onclick="loadProgram('hybrid')">
+                                Select Program
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workout-tips">
+                    <div class="tips-title">Advanced Program Features</div>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <div class="tip-icon">🎯</div>
+                            <div class="tip-text"><strong>Specialized Focus:</strong> Each program targets specific fitness domains with expert-level programming.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">📊</div>
+                            <div class="tip-text"><strong>Periodized Structure:</strong> Scientifically planned progression over 8-12 week cycles.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">⚡</div>
+                            <div class="tip-text"><strong>Advanced Techniques:</strong> Includes intensity methods, advanced set/rep schemes, and specialization.</div>
+                        </div>
+                        <div class="tip-item">
+                            <div class="tip-icon">🔄</div>
+                            <div class="tip-text"><strong>Auto-Regulation:</strong> Built-in adjustments based on performance and recovery status.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- Program Tips Section -->
@@ -2747,6 +3536,7 @@
             <p><span class="footer-highlight">ELITE TRAINING SYSTEM PRO</span> • Advanced Programs for Elite Results</p>
             <p>Sunday: Complete Rest & Recovery • Listen to Your Body • Consistency Beats Perfection</p>
             <p style="margin-top: 10px;">Click exercises to track progress • Switch between tabs for different training programs</p>
+            <p style="margin-top: 5px; font-size: 0.8rem; color: #6c757d;">PWA Ready • Install to Home Screen for Best Experience</p>
         </footer>
     </div>
 
@@ -2764,11 +3554,17 @@
                 workoutStartTime: null,
                 caloriesBurned: 0,
                 activeExercises: new Set(),
-                isActive: false
+                isActive: false,
+                isPaused: false,
+                pausedTime: 0,
+                totalWorkoutTime: 0
             };
             
             let workoutTimer = null;
             let notificationTimer = null;
+            let restTimer = null;
+            let restTimeRemaining = 60;
+            let isRestTimerRunning = false;
             
             // Load workout state from localStorage
             function loadWorkoutState() {
@@ -2788,14 +3584,17 @@
                     
                     updateDisplay();
                     
-                    // If workout was active, resume timer
-                    if (workoutState.isActive && workoutState.workoutStartTime) {
+                    // If workout was active and not paused, resume timer
+                    if (workoutState.isActive && !workoutState.isPaused && workoutState.workoutStartTime) {
                         startWorkoutTimer();
                         showNotificationIndicator();
                         updateDocumentTitle();
                         setupNotificationUpdates();
                     }
                 }
+                
+                // Load workout history
+                loadWorkoutHistory();
             }
             
             // Save workout state to localStorage
@@ -2814,8 +3613,14 @@
                 document.getElementById('completed-exercises').textContent = workoutState.completedExercises;
                 document.getElementById('calories-burned').textContent = workoutState.caloriesBurned;
                 
-                if (workoutState.workoutStartTime) {
+                if (workoutState.workoutStartTime && !workoutState.isPaused) {
                     updateWorkoutTime();
+                }
+                
+                // Update pause button text
+                const pauseBtn = document.getElementById('pauseBtn');
+                if (pauseBtn) {
+                    pauseBtn.textContent = workoutState.isPaused ? '▶️ Resume' : '⏸️ Pause';
                 }
                 
                 // Restore active exercise cards
@@ -2823,17 +3628,23 @@
                     const exerciseName = card.querySelector('.exercise-name').textContent.split('\n')[0].trim();
                     if (workoutState.activeExercises.has(exerciseName)) {
                         card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
                     }
                 });
             }
             
             // Update workout time display
             function updateWorkoutTime() {
-                if (!workoutState.workoutStartTime) return;
+                if (!workoutState.workoutStartTime || workoutState.isPaused) return;
                 
                 const now = new Date();
                 const startTime = new Date(workoutState.workoutStartTime);
-                const diff = now - startTime;
+                let diff = now - startTime - workoutState.pausedTime;
+                
+                // Add total workout time (excluding paused time)
+                workoutState.totalWorkoutTime = diff;
+                
                 const minutes = Math.floor(diff / 60000);
                 const seconds = Math.floor((diff % 60000) / 1000);
                 
@@ -2852,6 +3663,46 @@
                 }, 1000);
             }
             
+            // Toggle workout pause
+            window.toggleWorkoutPause = function() {
+                if (workoutState.isPaused) {
+                    // Resume workout
+                    workoutState.isPaused = false;
+                    workoutState.workoutStartTime = new Date(new Date().getTime() - workoutState.totalWorkoutTime);
+                    startWorkoutTimer();
+                    showNotificationIndicator();
+                    updateDocumentTitle();
+                    setupNotificationUpdates();
+                    
+                    // Send notification
+                    if (Notification.permission === 'granted') {
+                        new Notification('Workout Resumed', {
+                            body: 'Your workout timer has been resumed',
+                            icon: '🏋️'
+                        });
+                    }
+                } else {
+                    // Pause workout
+                    workoutState.isPaused = true;
+                    if (workoutTimer) {
+                        clearInterval(workoutTimer);
+                        workoutTimer = null;
+                    }
+                    hideNotificationIndicator();
+                    
+                    // Send notification
+                    if (Notification.permission === 'granted') {
+                        new Notification('Workout Paused', {
+                            body: 'Your workout timer has been paused',
+                            icon: '⏸️'
+                        });
+                    }
+                }
+                
+                updateDisplay();
+                saveWorkoutState();
+            };
+            
             // Show notification indicator
             function showNotificationIndicator() {
                 notificationIndicator.style.display = 'flex';
@@ -2866,7 +3717,7 @@
             
             // Update document title for lockscreen
             function updateDocumentTitle() {
-                if (workoutState.isActive && document.hidden) {
+                if (workoutState.isActive && !workoutState.isPaused && document.hidden) {
                     const timeText = document.getElementById('workout-time').textContent;
                     const exercisesText = workoutState.completedExercises;
                     document.title = `🏋️ ${timeText} | ${exercisesText} ex | Elite Training`;
@@ -2881,7 +3732,7 @@
                 
                 // Update title every 10 seconds when page is hidden
                 notificationTimer = setInterval(function() {
-                    if (document.hidden && workoutState.isActive) {
+                    if (document.hidden && workoutState.isActive && !workoutState.isPaused) {
                         updateDocumentTitle();
                     }
                 }, 10000);
@@ -2889,7 +3740,7 @@
             
             // Page visibility change handler
             document.addEventListener('visibilitychange', function() {
-                if (workoutState.isActive) {
+                if (workoutState.isActive && !workoutState.isPaused) {
                     updateDocumentTitle();
                 }
             });
@@ -2912,6 +3763,11 @@
                 document.querySelector('.tab-container').scrollIntoView({
                     behavior: 'smooth'
                 });
+                
+                // Update analytics when switching to history tab
+                if (tabId === 'history') {
+                    updateWorkoutHistory();
+                }
             }
             
             // Add click event listeners to tab buttons
@@ -2922,28 +3778,33 @@
                 });
             });
             
-            // Exercise highlighting functionality
+            // Exercise highlighting functionality with fix for removing active state
             document.querySelectorAll('.exercise-card').forEach(card => {
                 card.addEventListener('click', function() {
-                    const parentGrid = this.closest('.exercise-grid');
-                    if (parentGrid) {
-                        parentGrid.querySelectorAll('.exercise-card').forEach(c => {
-                            c.classList.remove('active');
-                        });
-                    }
-                    
-                    this.classList.add('active');
-                    
                     const exerciseName = this.querySelector('.exercise-name').textContent.split('\n')[0].trim();
                     
-                    // Update workout state
-                    if (!workoutState.activeExercises.has(exerciseName)) {
+                    // Toggle active state
+                    if (this.classList.contains('active')) {
+                        // Remove active state
+                        this.classList.remove('active');
+                        workoutState.activeExercises.delete(exerciseName);
+                        workoutState.completedExercises = Math.max(0, workoutState.completedExercises - 1);
+                        workoutState.caloriesBurned = Math.max(0, workoutState.caloriesBurned - 5);
+                    } else {
+                        // Add active state and clear other active exercises in same grid
+                        const parentGrid = this.closest('.exercise-grid');
+                        if (parentGrid) {
+                            parentGrid.querySelectorAll('.exercise-card').forEach(c => {
+                                c.classList.remove('active');
+                            });
+                        }
+                        
+                        this.classList.add('active');
+                        
+                        // Update workout state
                         workoutState.completedExercises++;
                         workoutState.activeExercises.add(exerciseName);
                         workoutState.caloriesBurned += 5;
-                        
-                        document.getElementById('completed-exercises').textContent = workoutState.completedExercises;
-                        document.getElementById('calories-burned').textContent = workoutState.caloriesBurned;
                         
                         if (!workoutState.workoutStartTime) {
                             workoutState.workoutStartTime = new Date().toISOString();
@@ -2952,20 +3813,37 @@
                             updateDocumentTitle();
                             setupNotificationUpdates();
                         }
-                        
-                        saveWorkoutState();
+                    }
+                    
+                    // Update display and save state
+                    document.getElementById('completed-exercises').textContent = workoutState.completedExercises;
+                    document.getElementById('calories-burned').textContent = workoutState.caloriesBurned;
+                    
+                    saveWorkoutState();
+                    
+                    // Save workout to history if this completes a workout session
+                    if (workoutState.completedExercises >= 3) {
+                        saveWorkoutToHistory();
                     }
                 });
             });
             
             // Reset workout function
             window.resetWorkout = function() {
+                // Save current workout to history before resetting
+                if (workoutState.completedExercises > 0) {
+                    saveWorkoutToHistory();
+                }
+                
                 workoutState = {
                     completedExercises: 0,
                     workoutStartTime: null,
                     caloriesBurned: 0,
                     activeExercises: new Set(),
-                    isActive: false
+                    isActive: false,
+                    isPaused: false,
+                    pausedTime: 0,
+                    totalWorkoutTime: 0
                 };
                 
                 document.getElementById('completed-exercises').textContent = '0';
@@ -2989,26 +3867,454 @@
                 hideNotificationIndicator();
                 document.title = '🏋️ Elite Training System PRO';
                 
-                // Clear localStorage
+                // Clear localStorage for current day
                 localStorage.removeItem('eliteWorkoutState');
                 localStorage.removeItem('eliteWorkoutDate');
+                
+                // Update analytics
+                updateWorkoutHistory();
+            };
+            
+            // REST TIMER FUNCTIONALITY
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+            
+            function updateRestTimerDisplay() {
+                document.getElementById('restTimerDisplay').textContent = formatTime(restTimeRemaining);
+            }
+            
+            function startRestTimer() {
+                if (isRestTimerRunning) return;
+                
+                isRestTimerRunning = true;
+                restTimer = setInterval(function() {
+                    restTimeRemaining--;
+                    updateRestTimerDisplay();
+                    
+                    if (restTimeRemaining <= 0) {
+                        clearInterval(restTimer);
+                        isRestTimerRunning = false;
+                        
+                        // Send notification
+                        if (Notification.permission === 'granted') {
+                            new Notification('Rest Complete!', {
+                                body: 'Time for your next set!',
+                                icon: '🏋️',
+                                requireInteraction: true
+                            });
+                        }
+                        
+                        // Play sound if available
+                        try {
+                            const audio = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==');
+                            audio.volume = 0.5;
+                            audio.play();
+                        } catch (e) {}
+                        
+                        // Flash the timer
+                        const display = document.getElementById('restTimerDisplay');
+                        display.style.color = '#ff4700';
+                        setTimeout(() => {
+                            display.style.color = '#00b4d8';
+                        }, 500);
+                    }
+                }, 1000);
+            }
+            
+            function pauseRestTimer() {
+                if (isRestTimerRunning) {
+                    clearInterval(restTimer);
+                    isRestTimerRunning = false;
+                }
+            }
+            
+            function resetRestTimer() {
+                pauseRestTimer();
+                restTimeRemaining = 60;
+                updateRestTimerDisplay();
+            }
+            
+            // Initialize rest timer
+            document.getElementById('startRestTimer').addEventListener('click', startRestTimer);
+            document.getElementById('pauseRestTimer').addEventListener('click', pauseRestTimer);
+            document.getElementById('resetRestTimer').addEventListener('click', resetRestTimer);
+            document.getElementById('addMinute').addEventListener('click', function() {
+                restTimeRemaining += 60;
+                updateRestTimerDisplay();
+            });
+            document.getElementById('add30Seconds').addEventListener('click', function() {
+                restTimeRemaining += 30;
+                updateRestTimerDisplay();
+            });
+            
+            // Preset buttons
+            document.querySelectorAll('.preset-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const seconds = parseInt(this.getAttribute('data-seconds'));
+                    pauseRestTimer();
+                    restTimeRemaining = seconds;
+                    updateRestTimerDisplay();
+                });
+            });
+            
+            // WORKOUT HISTORY FUNCTIONALITY
+            function loadWorkoutHistory() {
+                const history = JSON.parse(localStorage.getItem('workoutHistory') || '[]');
+                return history;
+            }
+            
+            function saveWorkoutToHistory() {
+                if (workoutState.completedExercises === 0) return;
+                
+                const history = loadWorkoutHistory();
+                const workout = {
+                    date: new Date().toISOString(),
+                    exercises: workoutState.completedExercises,
+                    calories: workoutState.caloriesBurned,
+                    duration: workoutState.totalWorkoutTime,
+                    program: getCurrentProgram()
+                };
+                
+                history.push(workout);
+                
+                // Keep only last 50 workouts
+                if (history.length > 50) {
+                    history.shift();
+                }
+                
+                localStorage.setItem('workoutHistory', JSON.stringify(history));
+                updateWorkoutHistory();
+            }
+            
+            function getCurrentProgram() {
+                const activeTab = document.querySelector('.tab-content.active');
+                if (!activeTab) return 'Unknown';
+                
+                const tabId = activeTab.id;
+                if (tabId.includes('strength')) return 'Strength PRO';
+                if (tabId.includes('weightloss')) return 'Cardio PRO';
+                if (tabId.includes('abs')) return 'Abs PRO';
+                if (tabId.includes('nutrition')) return 'Nutrition';
+                return 'Custom';
+            }
+            
+            function updateWorkoutHistory() {
+                const history = loadWorkoutHistory();
+                
+                // Update stats
+                document.getElementById('totalWorkouts').textContent = history.length;
+                
+                let totalTime = 0;
+                let totalCalories = 0;
+                
+                history.forEach(workout => {
+                    totalTime += workout.duration || 0;
+                    totalCalories += workout.calories || 0;
+                });
+                
+                const totalHours = Math.floor(totalTime / 3600000);
+                const totalMinutes = Math.floor((totalTime % 3600000) / 60000);
+                document.getElementById('totalTime').textContent = `${totalHours}h ${totalMinutes}m`;
+                document.getElementById('totalCalories').textContent = totalCalories;
+                document.getElementById('avgDuration').textContent = history.length > 0 ? 
+                    `${Math.floor((totalTime / history.length) / 60000)}m` : '0m';
+                
+                // Update workout log
+                const workoutLog = document.getElementById('workoutLog');
+                if (history.length === 0) {
+                    workoutLog.innerHTML = '<p style="color: #adb5bd; text-align: center; padding: 20px;">No workout history yet. Complete your first workout to see analytics!</p>';
+                    return;
+                }
+                
+                workoutLog.innerHTML = '';
+                
+                // Show last 10 workouts
+                history.slice(-10).reverse().forEach(workout => {
+                    const date = new Date(workout.date);
+                    const duration = Math.floor((workout.duration || 0) / 60000);
+                    
+                    const item = document.createElement('div');
+                    item.className = 'workout-log-item';
+                    item.innerHTML = `
+                        <div class="workout-log-date">${date.toLocaleDateString()} ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+                        <div class="workout-log-details">
+                            <strong>${workout.program || 'Custom'}</strong> • 
+                            ${workout.exercises} exercises • 
+                            ${duration} minutes • 
+                            ${workout.calories} calories burned
+                        </div>
+                    `;
+                    workoutLog.appendChild(item);
+                });
+            }
+            
+            window.exportWorkoutHistory = function() {
+                const history = loadWorkoutHistory();
+                const dataStr = JSON.stringify(history, null, 2);
+                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                
+                const exportFileDefaultName = `workout-history-${new Date().toISOString().slice(0,10)}.json`;
+                
+                const linkElement = document.createElement('a');
+                linkElement.setAttribute('href', dataUri);
+                linkElement.setAttribute('download', exportFileDefaultName);
+                linkElement.click();
+            };
+            
+            window.clearWorkoutHistory = function() {
+                if (confirm('Are you sure you want to clear all workout history? This cannot be undone.')) {
+                    localStorage.removeItem('workoutHistory');
+                    updateWorkoutHistory();
+                }
+            };
+            
+            // AI WORKOUT GENERATOR
+            window.generateAIWorkout = function() {
+                const goal = document.getElementById('goalSelect').value;
+                const experience = document.getElementById('experienceSelect').value;
+                const equipment = document.getElementById('equipmentSelect').value;
+                const duration = parseInt(document.getElementById('durationInput').value);
+                const muscleFocus = document.getElementById('muscleSelect').value;
+                
+                // Generate workout based on inputs
+                const workout = generateWorkout(goal, experience, equipment, duration, muscleFocus);
+                
+                // Display workout
+                const resultDiv = document.getElementById('aiWorkoutResult');
+                resultDiv.innerHTML = `
+                    <div class="ai-workout-title">🤖 Generated ${workout.name}</div>
+                    <div style="color: #adb5bd; margin-bottom: 15px;">${workout.description}</div>
+                    
+                    <div class="section-title">Warm-up (${workout.warmup} minutes)</div>
+                    <div style="color: #adb5bd; margin-bottom: 15px;">${workout.warmupDetails}</div>
+                    
+                    <div class="section-title">Main Workout</div>
+                    ${workout.exercises.map(ex => `
+                        <div class="exercise-card" style="margin-bottom: 10px;">
+                            <div class="exercise-name">${ex.name}
+                                <span class="exercise-sets">${ex.sets}</span>
+                            </div>
+                            <div class="exercise-details">${ex.details}</div>
+                        </div>
+                    `).join('')}
+                    
+                    <div class="cardio-section">
+                        <div class="cardio-title">Cool Down</div>
+                        <div class="cardio-details">
+                            <span class="cardio-type">${workout.cooldown.type}</span>
+                            <span class="cardio-time">${workout.cooldown.time}</span>
+                        </div>
+                        <div class="cardio-instructions">${workout.cooldown.details}</div>
+                    </div>
+                    
+                    <button class="timer-btn" style="width: 100%; margin-top: 20px;" onclick="startGeneratedWorkout()">
+                        🏋️ Start This Workout
+                    </button>
+                `;
+                
+                resultDiv.style.display = 'block';
+                resultDiv.scrollIntoView({ behavior: 'smooth' });
+                
+                // Save generated workout
+                localStorage.setItem('lastGeneratedWorkout', JSON.stringify(workout));
+            };
+            
+            function generateWorkout(goal, experience, equipment, duration, muscleFocus) {
+                // Define exercise libraries
+                const exercises = {
+                    strength: [
+                        { name: "Barbell Squats", sets: "5×5", details: "Heavy weight, focus on form and depth" },
+                        { name: "Bench Press", sets: "5×5", details: "Competition style with pause" },
+                        { name: "Deadlifts", sets: "3×3", details: "Conventional or sumo, reset each rep" },
+                        { name: "Overhead Press", sets: "4×6", details: "Standing, strict form" },
+                        { name: "Weighted Pull-ups", sets: "4×6", details: "Add weight for 6 reps max" }
+                    ],
+                    hypertrophy: [
+                        { name: "Incline Dumbbell Press", sets: "4×10-12", details: "30-45 degree incline, stretch at bottom" },
+                        { name: "Lat Pulldowns", sets: "4×10-12", details: "Wide grip, squeeze lats" },
+                        { name: "Leg Press", sets: "4×12-15", details: "High volume, controlled negatives" },
+                        { name: "Dumbbell Shoulder Press", sets: "4×10-12", details: "Seated, full ROM" },
+                        { name: "Barbell Curls", sets: "3×12-15", details: "Strict form, no swinging" }
+                    ],
+                    endurance: [
+                        { name: "Circuit Training", sets: "4 rounds", details: "Minimal rest between exercises" },
+                        { name: "High-Rep Squats", sets: "3×20", details: "Light weight, focus on endurance" },
+                        { name: "Push-up Variations", sets: "5×max", details: "Different hand positions" },
+                        { name: "Bodyweight Rows", sets: "4×15-20", details: "TRX or barbell" },
+                        { name: "Plank Series", sets: "4×60s", details: "Different variations" }
+                    ]
+                };
+                
+                // Select exercises based on goal
+                let selectedExercises = [];
+                if (goal === 'strength') selectedExercises = exercises.strength.slice(0, 4);
+                else if (goal === 'hypertrophy') selectedExercises = exercises.hypertrophy.slice(0, 5);
+                else if (goal === 'endurance') selectedExercises = exercises.endurance.slice(0, 4);
+                else selectedExercises = exercises.hypertrophy.slice(0, 4); // Default
+                
+                // Adjust based on equipment
+                if (equipment === 'bodyweight') {
+                    selectedExercises = [
+                        { name: "Push-up Variations", sets: "4×15-20", details: "Wide, narrow, diamond, decline" },
+                        { name: "Pistol Squats", sets: "3×8/side", details: "Assisted if needed" },
+                        { name: "Pull-ups/Chin-ups", sets: "4×max", details: "Different grips" },
+                        { name: "Dips", sets: "4×10-15", details: "Between chairs or bars" },
+                        { name: "L-sit Progressions", sets: "4×max hold", details: "Build core strength" }
+                    ];
+                } else if (equipment === 'home') {
+                    selectedExercises = [
+                        { name: "Dumbbell Press", sets: "4×10-12", details: "Flat or incline bench" },
+                        { name: "Goblet Squats", sets: "4×12-15", details: "Heavy dumbbell, deep squat" },
+                        { name: "Bent-over Rows", sets: "4×10-12", details: "Dumbbells, squeeze back" },
+                        { name: "Overhead Press", sets: "4×10-12", details: "Dumbbells or barbell" }
+                    ];
+                }
+                
+                // Adjust based on duration
+                if (duration < 45) {
+                    selectedExercises = selectedExercises.slice(0, 3);
+                } else if (duration > 90) {
+                    selectedExercises = selectedExercises.concat(selectedExercises.slice(0, 2));
+                }
+                
+                // Adjust based on muscle focus
+                if (muscleFocus === 'upper') {
+                    selectedExercises = selectedExercises.filter(ex => 
+                        !ex.name.toLowerCase().includes('squat') && 
+                        !ex.name.toLowerCase().includes('leg')
+                    );
+                } else if (muscleFocus === 'lower') {
+                    selectedExercises = selectedExercises.filter(ex => 
+                        ex.name.toLowerCase().includes('squat') || 
+                        ex.name.toLowerCase().includes('leg') ||
+                        ex.name.toLowerCase().includes('deadlift')
+                    );
+                }
+                
+                // Create workout object
+                const workoutNames = {
+                    strength: "Strength & Power Workout",
+                    hypertrophy: "Hypertrophy Focus Workout",
+                    endurance: "Muscle Endurance Circuit",
+                    fatloss: "Fat Burning Workout",
+                    performance: "Athletic Performance Training"
+                };
+                
+                const descriptions = {
+                    strength: "Heavy compound lifts with long rest periods for maximal strength gains.",
+                    hypertrophy: "Moderate weight with higher volume for muscle growth and pump.",
+                    endurance: "High rep ranges with minimal rest for muscular endurance.",
+                    fatloss: "Metabolic conditioning with circuit style training for maximum calorie burn.",
+                    performance: "Power and agility focused training for athletic performance."
+                };
+                
+                return {
+                    name: workoutNames[goal] || "Custom AI Workout",
+                    description: descriptions[goal] || "Custom generated workout based on your inputs.",
+                    warmup: 10,
+                    warmupDetails: "Dynamic stretching, light cardio, and activation exercises for the target muscle groups.",
+                    exercises: selectedExercises,
+                    cooldown: {
+                        type: "Stretching & Mobility",
+                        time: "10 MIN",
+                        details: "Full body stretching focusing on worked muscle groups and mobility exercises."
+                    }
+                };
+            }
+            
+            window.startGeneratedWorkout = function() {
+                // Switch to strength tab and start timer
+                switchTab('strength');
+                
+                // Reset current workout
+                if (workoutState.completedExercises > 0) {
+                    if (!confirm("Starting a new workout will reset your current progress. Continue?")) {
+                        return;
+                    }
+                }
+                
+                window.resetWorkout();
+                
+                // Show notification
+                if (Notification.permission === 'granted') {
+                    new Notification('AI Workout Started', {
+                        body: 'Your generated workout has begun!',
+                        icon: '🤖'
+                    });
+                }
+                
+                alert("AI Workout loaded! Click exercises as you complete them to track your progress.");
+            };
+            
+            // ADVANCED PROGRAMS
+            window.loadProgram = function(programType) {
+                switchTab('strength');
+                
+                // Reset current workout
+                if (workoutState.completedExercises > 0) {
+                    if (!confirm("Loading a new program will reset your current workout. Continue?")) {
+                        return;
+                    }
+                }
+                
+                window.resetWorkout();
+                
+                // Show program-specific message
+                const messages = {
+                    powerlifting: "Powerlifting Pro program loaded! Focus on heavy compound lifts with proper form.",
+                    bodybuilding: "Bodybuilding Elite program loaded! Focus on mind-muscle connection and pump.",
+                    athlete: "Athlete Performance program loaded! Focus on explosive power and agility.",
+                    calisthenics: "Calisthenics Master program loaded! Focus on bodyweight control and skill.",
+                    strongman: "Strongman Pro program loaded! Focus on grip strength and functional power.",
+                    hybrid: "Hybrid Athlete program loaded! Balance strength and endurance training."
+                };
+                
+                alert(messages[programType] || "Advanced program loaded!");
+                
+                // Send notification
+                if (Notification.permission === 'granted') {
+                    new Notification('Program Loaded', {
+                        body: `${programType.charAt(0).toUpperCase() + programType.slice(1)} program activated!`,
+                        icon: '📋'
+                    });
+                }
             };
             
             // Check for hash in URL to load specific tab
             window.addEventListener('load', function() {
                 const hash = window.location.hash.substring(1);
-                if (hash === 'weightloss' || hash === 'cardio') {
-                    switchTab('weightloss');
-                } else if (hash === 'abs') {
-                    switchTab('abs');
-                } else if (hash === 'nutrition') {
-                    switchTab('nutrition');
+                const tabMap = {
+                    'weightloss': 'weightloss',
+                    'cardio': 'weightloss',
+                    'abs': 'abs',
+                    'nutrition': 'nutrition',
+                    'resttimer': 'resttimer',
+                    'history': 'history',
+                    'aigenerator': 'aigenerator',
+                    'advanced': 'advanced'
+                };
+                
+                if (tabMap[hash]) {
+                    switchTab(tabMap[hash]);
                 } else {
                     switchTab('strength');
                 }
                 
                 // Load saved workout state
                 loadWorkoutState();
+                
+                // Request notification permission
+                if ('Notification' in window && Notification.permission === 'default') {
+                    Notification.requestPermission();
+                }
+                
+                // Register service worker for PWA
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('sw.js').catch(console.error);
+                }
             });
             
             // Save state before page unload
@@ -3024,6 +4330,9 @@
                     saveWorkoutState();
                 }
             }, 30000);
+            
+            // Initialize rest timer display
+            updateRestTimerDisplay();
         });
     </script>
 </body>
