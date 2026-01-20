@@ -1090,6 +1090,7 @@
                     <div class="workout-controls">
                         <button class="control-btn" id="pauseBtn" onclick="toggleWorkoutPause()">⏸️ Pause</button>
                         <button class="control-btn" id="resetBtn" onclick="resetWorkout()">🔄 Reset</button>
+                        <button class="control-btn" id="restoreBtn" onclick="restoreWorkout()" style="display:none;">↩️ Restore</button>
                     </div>
                 </div>
             </div>
@@ -1198,6 +1199,14 @@
                                     <div class="exercise-details">Reset each rep. Hook grip allowed. 5 min rest after.</div>
                                     <div class="exercise-tips">Chalk recommended. Maintain neutral spine.</div>
                                 </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Overhead Press
+                                        <span class="exercise-sets">5×5 @ 80% 1RM</span>
+                                    </div>
+                                    <div class="exercise-details">Standing, strict press. Keep core tight and avoid leaning back.</div>
+                                    <div class="exercise-tips">Progress by 2.5kg weekly.</div>
+                                </div>
                             </div>
                             
                             <div class="section-title">Accessory Work</div>
@@ -1225,6 +1234,21 @@
                                         <span class="exercise-sets">4×AMRAP</span>
                                     </div>
                                     <div class="exercise-details">Add weight belt. Full ROM, chest to bar.</div>
+                                </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Dumbbell Incline Press
+                                        <span class="exercise-sets">4×8-10</span>
+                                    </div>
+                                    <div class="exercise-details">30-degree incline, focus on upper chest development.</div>
+                                    <div class="exercise-tips">Control the negative, explosive positive.</div>
+                                </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Tricep Pushdowns
+                                        <span class="exercise-sets">4×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Rope attachment, full extension, squeeze at bottom.</div>
                                 </div>
                             </div>
                             
@@ -1287,6 +1311,14 @@
                                     </div>
                                     <div class="exercise-details">Wider than shoulder width. Focus on lat stretch and contraction.</div>
                                 </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">T-Bar Rows
+                                        <span class="exercise-sets">4×8-10</span>
+                                    </div>
+                                    <div class="exercise-details">Heavy weight, focus on mid-back contraction.</div>
+                                    <div class="exercise-tips">Keep chest supported, no cheating.</div>
+                                </div>
                             </div>
                             
                             <div class="section-title">Shoulders & Arms</div>
@@ -1314,6 +1346,20 @@
                                         <span class="exercise-sets">4×12-15</span>
                                     </div>
                                     <div class="exercise-details">Rope attachment. Stretch at bottom, squeeze at top.</div>
+                                </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Face Pulls
+                                        <span class="exercise-sets">4×15-20</span>
+                                    </div>
+                                    <div class="exercise-details">Rope attachment, focus on squeezing rear delts and upper back.</div>
+                                </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Hammer Curls
+                                        <span class="exercise-sets">4×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">Neutral grip, full range of motion, control negative.</div>
                                 </div>
                             </div>
                             
@@ -1376,6 +1422,13 @@
                                     </div>
                                     <div class="exercise-details">15 reps, rest 15s, 10 reps, rest 15s, 10 reps to failure.</div>
                                 </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Bulgarian Split Squats
+                                        <span class="exercise-sets">3×8-10 per leg</span>
+                                    </div>
+                                    <div class="exercise-details">Rear foot elevated, deep stretch, focus on quad engagement.</div>
+                                </div>
                             </div>
                             
                             <div class="section-title">Hamstring & Glute Focus</div>
@@ -1405,6 +1458,13 @@
                                     </div>
                                     <div class="exercise-details">Heavy dumbbells. Step deep, drive through heel.</div>
                                 </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Hip Thrusts
+                                        <span class="exercise-sets">4×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Barbell across hips, full extension, squeeze glutes at top.</div>
+                                </div>
                             </div>
                             
                             <div class="section-title">Calves & Core</div>
@@ -1426,6 +1486,13 @@
                                         <span class="exercise-sets">4×10-12</span>
                                     </div>
                                     <div class="exercise-details">From knees. Maintain core tension throughout.</div>
+                                </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Standing Calf Raises
+                                        <span class="exercise-sets">4×15-20</span>
+                                    </div>
+                                    <div class="exercise-details">Machine or Smith machine, full range of motion.</div>
                                 </div>
                             </div>
                         </div>
@@ -1473,6 +1540,13 @@
                                     </div>
                                     <div class="exercise-details">2-second pause at chest. Explosive concentric.</div>
                                 </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Close Grip Bench Press
+                                        <span class="exercise-sets">4×6-8</span>
+                                    </div>
+                                    <div class="exercise-details">Hands shoulder-width apart, focus on triceps.</div>
+                                </div>
                             </div>
                             
                             <div class="section-title">Heavy Pulling</div>
@@ -1495,6 +1569,13 @@
                                     </div>
                                     <div class="exercise-details">Rope attachment. External rotation at peak.</div>
                                 </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Barbell Shrugs
+                                        <span class="exercise-sets">4×10-12</span>
+                                    </div>
+                                    <div class="exercise-details">Heavy weight, full range of motion, squeeze at top.</div>
+                                </div>
                             </div>
                             
                             <div class="section-title">Accessory</div>
@@ -1516,6 +1597,20 @@
                                         <span class="exercise-sets">3×12+10+8</span>
                                     </div>
                                     <div class="exercise-details">Start heavy, drop weight twice. Burnout.</div>
+                                </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Cable Crossovers
+                                        <span class="exercise-sets">4×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Focus on chest stretch and squeeze.</div>
+                                </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Reverse Flyes
+                                        <span class="exercise-sets">4×12-15</span>
+                                    </div>
+                                    <div class="exercise-details">Rear delt focus, controlled movement.</div>
                                 </div>
                             </div>
                         </div>
@@ -1553,6 +1648,13 @@
                                     </div>
                                     <div class="exercise-details">Maximum height possible. Soft landing, reset between jumps.</div>
                                 </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Snatch Grip High Pulls
+                                        <span class="exercise-sets">4×5</span>
+                                    </div>
+                                    <div class="exercise-details">Wide grip, explosive triple extension.</div>
+                                </div>
                             </div>
                             
                             <div class="section-title">Strongman Implement</div>
@@ -1575,6 +1677,13 @@
                                     </div>
                                     <div class="exercise-details">Clean to chest, press overhead. Neutral grip.</div>
                                 </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Yoke Walks
+                                        <span class="game-sets">4×20m</span>
+                                    </div>
+                                    <div class="exercise-details">Heavy yoke, maintain upright posture, quick steps.</div>
+                                </div>
                             </div>
                             
                             <div class="section-title">Metabolic Conditioning</div>
@@ -1596,6 +1705,13 @@
                                         <span class="exercise-sets">8 rounds</span>
                                     </div>
                                     <div class="exercise-details">20s work, 10s rest. Maximum intensity.</div>
+                                </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Sled Drags
+                                        <span class="exercise-sets">5×40m</span>
+                                    </div>
+                                    <div class="exercise-details">Forward and backward, heavy sled.</div>
                                 </div>
                             </div>
                             
@@ -1641,6 +1757,13 @@
                                     </div>
                                     <div class="exercise-details">Front lever progressions, dragon flags, L-sit holds</div>
                                 </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Neck Training
+                                        <span class="exercise-sets">3×15-20</span>
+                                    </div>
+                                    <div class="exercise-details">Use a neck harness or manual resistance in all directions.</div>
+                                </div>
                             </div>
                             
                             <div class="section-title">Mobility & Recovery</div>
@@ -1662,6 +1785,13 @@
                                         <span class="exercise-sets">30 min</span>
                                     </div>
                                     <div class="exercise-details">Swimming, cycling, walking - Zone 1 heart rate only</div>
+                                </div>
+                                <!-- NEW EXERCISE ADDED -->
+                                <div class="exercise-card">
+                                    <div class="exercise-name">Breathing Exercises
+                                        <span class="exercise-sets">10 min</span>
+                                    </div>
+                                    <div class="exercise-details">Diaphragmatic breathing, box breathing for recovery.</div>
                                 </div>
                             </div>
                             
@@ -2744,6 +2874,17 @@
                                 <div class="macro-item">Calories: 450</div>
                             </div>
                         </div>
+                        <!-- NEW MEAL OPTION ADDED -->
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 4: Protein Pancakes</div>
+                            <div class="exercise-details">1 scoop protein powder, 1/2 cup oats, 2 eggs, 1/2 cup cottage cheese, cinnamon, sugar-free syrup</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 45g</div>
+                                <div class="macro-item">Carbs: 40g</div>
+                                <div class="macro-item">Fat: 12g</div>
+                                <div class="macro-item">Calories: 480</div>
+                            </div>
+                        </div>
                         <div class="exercise-tips">Goal: High protein to start metabolism, complex carbs for sustained energy, healthy fats.</div>
                     </div>
                     
@@ -2782,6 +2923,17 @@
                                 <div class="macro-item">Carbs: 25g</div>
                                 <div class="macro-item">Fat: 20g</div>
                                 <div class="macro-item">Calories: 380</div>
+                            </div>
+                        </div>
+                        <!-- NEW MEAL OPTION ADDED -->
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 4: Beef Jerky & Nuts</div>
+                            <div class="exercise-details">2 oz beef jerky, 1 oz mixed nuts (almonds, walnuts, cashews), 1 string cheese</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 30g</div>
+                                <div class="macro-item">Carbs: 10g</div>
+                                <div class="macro-item">Fat: 20g</div>
+                                <div class="macro-item">Calories: 350</div>
                             </div>
                         </div>
                         <div class="exercise-tips">Goal: Maintain protein synthesis, stabilize blood sugar, prevent overeating at lunch.</div>
@@ -2824,6 +2976,17 @@
                                 <div class="macro-item">Calories: 500</div>
                             </div>
                         </div>
+                        <!-- NEW MEAL OPTION ADDED -->
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 4: Salmon & Sweet Potato</div>
+                            <div class="exercise-details">8 oz salmon, 1 large sweet potato, 2 cups asparagus, 1 tbsp olive oil, lemon</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 50g</div>
+                                <div class="macro-item">Carbs: 45g</div>
+                                <div class="macro-item">Fat: 25g</div>
+                                <div class="macro-item">Calories: 600</div>
+                            </div>
+                        </div>
                         <div class="exercise-tips">Goal: Balanced macros, high volume for satiety, complex carbs for afternoon energy.</div>
                     </div>
                     
@@ -2864,6 +3027,17 @@
                                 <div class="macro-item">Calories: 280</div>
                             </div>
                         </div>
+                        <!-- NEW MEAL OPTION ADDED -->
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 4: Rice Cakes with Almond Butter</div>
+                            <div class="exercise-details">3 rice cakes, 2 tbsp almond butter, 1 tbsp jam, sprinkle of cinnamon</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 10g</div>
+                                <div class="macro-item">Carbs: 50g</div>
+                                <div class="macro-item">Fat: 15g</div>
+                                <div class="macro-item">Calories: 350</div>
+                            </div>
+                        </div>
                         <div class="exercise-tips">Goal: Easily digestible carbs for workout energy, minimal fat for quick digestion, hydration.</div>
                     </div>
                     
@@ -2900,6 +3074,17 @@
                                 <div class="macro-item">Carbs: 65g</div>
                                 <div class="macro-item">Fat: 5g</div>
                                 <div class="macro-item">Calories: 550</div>
+                            </div>
+                        </div>
+                        <!-- NEW MEAL OPTION ADDED -->
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 4: Protein Bar & Banana</div>
+                            <div class="exercise-details">1 high-protein bar (30g+ protein), 1 large banana, 1 bottle of water with electrolytes</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 30g</div>
+                                <div class="macro-item">Carbs: 45g</div>
+                                <div class="macro-item">Fat: 10g</div>
+                                <div class="macro-item">Calories: 400</div>
                             </div>
                         </div>
                         <div class="exercise-tips">Goal: Maximum protein for muscle repair, high glycemic carbs to replenish glycogen, minimal fat.</div>
@@ -2942,6 +3127,17 @@
                                 <div class="macro-item">Calories: 480</div>
                             </div>
                         </div>
+                        <!-- NEW MEAL OPTION ADDED -->
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 4: Shrimp Stir-fry</div>
+                            <div class="exercise-details">12 oz shrimp, 3 cups mixed vegetables, 1 cup brown rice, stir-fry sauce (low sugar), sesame oil</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 55g</div>
+                                <div class="macro-item">Carbs: 60g</div>
+                                <div class="macro-item">Fat: 10g</div>
+                                <div class="macro-item">Calories: 550</div>
+                            </div>
+                        </div>
                         <div class="exercise-tips">Goal: High protein for overnight recovery, fiber-rich vegetables, healthy fats, lower carbs at night.</div>
                     </div>
                     
@@ -2978,6 +3174,17 @@
                                 <div class="macro-item">Carbs: 15g</div>
                                 <div class="macro-item">Fat: 8g</div>
                                 <div class="macro-item">Calories: 220</div>
+                            </div>
+                        </div>
+                        <!-- NEW MEAL OPTION ADDED -->
+                        <div class="meal-option">
+                            <div class="meal-option-title">Option 4: Casein Protein Shake</div>
+                            <div class="exercise-details">1.5 scoops casein protein, 1 cup almond milk, 1 tbsp peanut butter, ice</div>
+                            <div class="macros">
+                                <div class="macro-item">Protein: 35g</div>
+                                <div class="macro-item">Carbs: 10g</div>
+                                <div class="macro-item">Fat: 8g</div>
+                                <div class="macro-item">Calories: 250</div>
                             </div>
                         </div>
                         <div class="exercise-tips">Goal: Slow-digesting protein for overnight muscle repair, minimal carbs/fats for easy digestion.</div>
@@ -3566,6 +3773,9 @@
             let restTimeRemaining = 60;
             let isRestTimerRunning = false;
             
+            // NEW: Variable to store last state before reset (for restore functionality)
+            let lastWorkoutState = null;
+            
             // Load workout state from localStorage
             function loadWorkoutState() {
                 const savedState = localStorage.getItem('eliteWorkoutState');
@@ -3825,11 +4035,20 @@
                     if (workoutState.completedExercises >= 3) {
                         saveWorkoutToHistory();
                     }
+                    
+                    // Hide restore button when starting new workout
+                    document.getElementById('restoreBtn').style.display = 'none';
                 });
             });
             
-            // Reset workout function
+            // Reset workout function - MODIFIED to save state before resetting
             window.resetWorkout = function() {
+                // Save current state to lastWorkoutState before resetting
+                lastWorkoutState = {
+                    ...workoutState,
+                    activeExercises: Array.from(workoutState.activeExercises)
+                };
+                
                 // Save current workout to history before resetting
                 if (workoutState.completedExercises > 0) {
                     saveWorkoutToHistory();
@@ -3871,8 +4090,44 @@
                 localStorage.removeItem('eliteWorkoutState');
                 localStorage.removeItem('eliteWorkoutDate');
                 
+                // Show restore button
+                document.getElementById('restoreBtn').style.display = 'block';
+                
                 // Update analytics
                 updateWorkoutHistory();
+            };
+            
+            // NEW: Restore workout function
+            window.restoreWorkout = function() {
+                if (!lastWorkoutState) {
+                    alert("No previous workout state to restore.");
+                    return;
+                }
+                
+                // Restore the saved state
+                workoutState = {
+                    ...lastWorkoutState,
+                    activeExercises: new Set(lastWorkoutState.activeExercises)
+                };
+                
+                // Update display
+                updateDisplay();
+                
+                // If the workout was active, restart the timer
+                if (workoutState.isActive && !workoutState.isPaused) {
+                    startWorkoutTimer();
+                    showNotificationIndicator();
+                    updateDocumentTitle();
+                    setupNotificationUpdates();
+                }
+                
+                // Hide restore button
+                document.getElementById('restoreBtn').style.display = 'none';
+                
+                // Save restored state to localStorage
+                saveWorkoutState();
+                
+                alert("Workout restored successfully!");
             };
             
             // REST TIMER FUNCTIONALITY
